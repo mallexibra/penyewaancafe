@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penyewaan Coffe</title>
+    <link rel="stylesheet" href="src/style/style.css" />
+  </head>
+  <body>
+    <nav class="bg-stone-800/90 backdrop-blur-sm fixed w-full p-4 text-white">
+      <div
+        class="relative flex justify-center md:justify-between items-center mx-auto max-w-4xl"
+      >
+        <div class="nav_brand">
+          <h1 class="sm:text-2xl text-xl font-extrabold">LOGO</h1>
+        </div>
+        <img
+          class="absolute right-0 w-9 md:hidden cursor-pointer"
+          src="src/assets/icons/burger_menu.png"
+          alt="burger_menu"
+          id="burger_menu"
+        />
+        <div
+          id="sidebar"
+          class="list_item text-sm font-medium fixed md:static bg-stone-800/90 md:bg-transparent backdrop-blur-sm w-[70%] h-screen md:h-auto top-[60px] right-0 hidden md:flex md:flex-row flex-col justify-center items-center gap-7"
+        >
+          <img
+            class="w-7 absolute top-3 left-3 cursor-pointer md:hidden"
+            src="src/assets/icons/close.png"
+            alt="icon_close"
+            id="btn_close"
+          />
+          <ul class="flex flex-col md:flex-row text-center gap-7">
+            <li>
+              <a class="hover:scale-110 text-sm inline-block" href="#"
+                >Tentang Kami</a
+              >
+            </li>
+            <li>
+              <a class="hover:scale-110 text-sm inline-block" href="#"
+                >Penyewaan</a
+              >
+            </li>
+            <li>
+              <a class="hover:scale-110 text-sm inline-block" href="#"
+                >Kontak Kami</a
+              >
+            </li>
+          </ul>
+          <div
+            class="btn flex md:flex-row flex-col md:flex-wrap text-center gap-7"
+          >
+            <a
+              class="bg-yellow-400 hover:bg-transparent hover:text-yellow-400 transition-all ease-in-out duration-150 border-2 border-yellow-400 px-3 py-1 rounded-sm text-stone-800 font-semibold"
+              href="signup"
+              >Sign Up</a
+            >
+            <a
+              class="px-3 py-1 text-yellow-400 hover:bg-yellow-400 hover:text-stone-800 font-semibold transition-all ease-in-out duration-150 border-2 border-yellow-400 rounded-sm"
+              href="login"
+              >Login</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <header
+      class="w-full min-h-[300px] bg-[url('/src/assets/image/cafe.jpg')] bg-cover"
+    ></header>
+    <main></main>
+    <script>
+      const burger = document.getElementById("burger_menu");
+      const close = document.getElementById("btn_close");
+      const sidebar = document.getElementById("sidebar");
+      burger.addEventListener("click", () => {
+        sidebar.classList.replace("hidden", "flex");
+      });
+      close.addEventListener("click", () => {
+        sidebar.classList.replace("flex", "hidden");
+      });
+    </script>
+  </body>
+</html>
