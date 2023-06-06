@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Penyewaan Coffe</title>
+    <title>Penyewaan Coffee</title>
     <link rel="stylesheet" href="src/style/style.css" />
   </head>
   <body>
-    <nav class="bg-stone-800/90 backdrop-blur-sm fixed w-full p-4 text-white">
+    <nav
+      class="bg-stone-800/90 backdrop-blur-sm fixed z-10 w-full p-4 text-white"
+    >
       <div
         class="relative flex justify-center md:justify-between items-center mx-auto max-w-4xl"
       >
@@ -66,19 +68,11 @@
       </div>
     </nav>
     <header
-      class="w-full min-h-[300px] bg-[url('/src/assets/image/cafe.jpg')] bg-cover"
-    ></header>
+      class="w-full min-h-[300px] bg-[url('/src/assets/image/cafe.jpg')] brightness-50"
+    >
+      <h1>Hello World!</h1>
+    </header>
     <main></main>
-    <script>
-      const burger = document.getElementById("burger_menu");
-      const close = document.getElementById("btn_close");
-      const sidebar = document.getElementById("sidebar");
-      burger.addEventListener("click", () => {
-        sidebar.classList.replace("hidden", "flex");
-      });
-      close.addEventListener("click", () => {
-        sidebar.classList.replace("flex", "hidden");
-      });
-    </script>
+    <script src="src/style/script.js"></script>
   </body>
 </html>
