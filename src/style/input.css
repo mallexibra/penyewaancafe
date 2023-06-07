@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.containers{
-    @apply  min-h-screen max-w-4xl  mx-auto;
+.containers {
+  @apply min-h-screen max-w-4xl  mx-auto;
+}
+
+.sidebar_active {
+  @apply bg-stone-800;
+}
+
+.form_active {
+  @apply bg-yellow-300 text-stone-800;
 }

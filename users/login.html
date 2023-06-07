@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produk</title>
+    <title>Login Users</title>
     <link rel="stylesheet" href="../src/style/style.css" />
   </head>
   <body class="font-poppins">
@@ -65,37 +65,47 @@
         </div>
       </div>
     </nav>
-    <main class="mt-16 min-h-screen">
-      <div class="mx-auto max-w-4xl p-3 sm:p-0">
-        <div class="p-2 ring-2 ring-stone-700 rounded-md">
-          <img
-            src="../src/assets/image/card.jpg"
-            alt="produk"
-            class="rounded-md"
-          />
-          <div class="details mt-3">
-            <h1 class="font-bold text-lg">Deskripsi</h1>
-            <p class="text-xs">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-              corporis ratione doloremque placeat ea maxime voluptatem alias
-              quos dolor expedita.
-            </p>
-            <h1 class="font-bold text-lg mt-3">Spesifikasi</h1>
-            <p class="text-xs">Kayu, Furniture, Original</p>
-            <h1 class="font-bold text-lg mt-3">Harga (Rp.)</h1>
-            <p class="text-xs font-medium">Rp. 17000 / day</p>
-            <button
-              class="my-3 font-bold bg-stone-800 text-white p-2 w-full rounded-md"
-            >
-              Tambahkan ke keranjang
-            </button>
-          </div>
+    <main class="w-full min-h-screen bg-yellow-100 grid place-items-center">
+      <form
+        action="#"
+        class="flex flex-col mt-20 w-4/5 md:w-5/12 bg-stone-700 text-white p-6 rounded-md shadow-lg"
+      >
+        <div class="flex w-full mb-3 text-center font-semibold justify-between">
+          <a href="login.html" class="w-full block form_active rounded-sm p-2"
+            >LOGIN</a
+          >
+          <a href="signup.html" class="w-full block rounded-sm p-2">SIGN UP</a>
         </div>
-      </div>
+        <h1 class="text-center font-extrabold text-2xl">LOGIN USERS</h1>
+        <p class="text-center text-xs my-3">Silahkan login dengan akun anda!</p>
+        <label for="username" class="flex flex-col mt-5 mb-3">
+          <span class="font-semibold">Username</span>
+          <input
+            type="text"
+            class="p-2 text-white text-xs bg-white/30 rounded-sm outline-none ring-2 ring-stone-400"
+            name="username"
+            id="username"
+          />
+        </label>
+        <label for="password" class="flex flex-col mb-3">
+          <span class="font-semibold">Password</span>
+          <input
+            type="password"
+            class="p-2 text-white text-xs bg-white/30 rounded-sm outline-none ring-2 ring-stone-400"
+            name="password"
+            id="password"
+          />
+        </label>
+        <button type="submit" class="w-full p-3 bg-stone-900 rounded font-bold">
+          Login
+        </button>
+        <a
+          href="../admin/login.html"
+          class="text-center text-xs mt-2 text-yellow-500 italic underline"
+          >Login Sebagai Admin</a
+        >
+      </form>
     </main>
-    <footer class="bg-stone-700 p-3 text-sm text-center text-white mt-6">
-      <p class="font-semibold">Copyright &copy; 2023 by Mallexibra</p>
-    </footer>
     <script src="../src/style/script.js"></script>
   </body>
 </html>
