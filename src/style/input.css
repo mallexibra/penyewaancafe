@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.containers{
+    @apply  min-h-screen max-w-4xl  mx-auto;
+}
