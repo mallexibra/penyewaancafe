@@ -62,58 +62,22 @@
       </div>
     </nav>
     <main class="mt-20 min-h-screen max-w-md mx-auto">
-      <div
-        class="profile max-w-md md:flex md:justify-center md:items-center mx-auto"
-      >
-        <img
-          src="../src/assets/image/card.jpg"
-          class="w-44 h-44 shadow-lg ring-2 ring-stone-800 mx-auto rounded-md object-cover object-center"
-          alt="profile_user"
-        />
-        <div class="flex flex-col mt-4 md:text-left text-center">
-          <h1 class="font-bold text-stone-800">MAULANA MALIK IBRAHIM</h1>
-          <p class="text-xs">@mallexibra | Kalibaru</p>
-          <div
-            class="text-xs flex justify-center items-center gap-3 font-bold mt-3"
-          >
-            <button class="bg-stone-800 text-white px-3 py-2 rounded-md">
-              Sewa Sekarang
-            </button>
-            <button class="bg-stone-400 text-stone-800 px-3 py-2 rounded-md">
-              Edit Profile
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="riwayat mt-12">
-        <h1 class="text-center font-bold my-7">Riwayat Pemesanan</h1>
-        <section>
-          <a
-            href="#"
-            class="bg-stone-800 relative mb-5 text-white block p-3 rounded-md"
-          >
-            <img
-              src="../src/assets/icons/arrow-to-top-24.png"
-              class="absolute right-2 top-2"
-              alt="arrow-to-top"
-            />
-            <h1 class="font-bold">Pemesanan Nomor #12</h1>
-            <p class="text-xs">1 Barang</p>
-          </a>
-          <a
-            href="#"
-            class="bg-stone-800 relative mb-5 text-white block p-3 rounded-md"
-          >
-            <img
-              src="../src/assets/icons/arrow-to-top-24.png"
-              class="absolute right-2 top-2"
-              alt="arrow-to-top"
-            />
-            <h1 class="font-bold">Pemesanan Nomor #12</h1>
-            <p class="text-xs">1 Barang</p>
-          </a>
-        </section>
-      </div>
+      <form action="">
+        <label
+          for="profile"
+          class="w-44 h-44 group inline-block shadow-lg ring-2 ring-stone-800 mx-auto rounded-md"
+        >
+          <input
+            type="file"
+            class="w-44 h-44 hover:bg-stone-700/60 duration-300 cursor-pointer p-0 m-0 absolute"
+          />
+          <img
+            src="../src/assets/image/card.jpg"
+            class="block w-full h-full object-cover"
+            alt="image_profile"
+          />
+        </label>
+      </form>
     </main>
     <footer class="bg-stone-700 p-3 text-sm text-center text-white mt-6">
       <p class="font-semibold">Copyright &copy; 2023 by Mallexibra</p>
