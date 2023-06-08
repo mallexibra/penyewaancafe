@@ -81,10 +81,12 @@
             DATA USERS PAGE
           </h1>
         </div>
-        <div>
-          <table>
-            <thead>
-              <th>NO</th>
+        <div
+          class="overflow-x-scroll max-w-2xl md:w-full md:overflow-x-visible grid place-items-center mx-auto"
+        >
+          <table class="text-center w-max text-sm text-stone-500">
+            <thead class="text-xs text-white uppercase bg-stone-700">
+              <th class="p-3">NO</th>
               <th>NAMA</th>
               <th>USERNAME</th>
               <th>PASSWORD</th>
@@ -92,15 +94,33 @@
               <th>ACTION</th>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>FATHUR RIZQI GANJAR</td>
-                <td>fathurrozi</td>
-                <td>12345</td>
-                <td>Kec. Kalibaru, Kab. Banyuwangi, Jawa Timur</td>
-                <td>
-                  <a href="#">Edit</a>
-                  <a href="#">Delete</a>
+              <tr class="bg-white border-b text-stone-900">
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  1
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  FATHUR RIZQI GANJAR
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  fathurrozi
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  12345
+                </td>
+                <td class="px-2 py-4 border font-medium">
+                  Kec. Kalibaru, Kab. Banyuwangi, Jawa Timur
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <a
+                    href="#"
+                    class="py-2 px-4 bg-blue-600 hover:bg-blue-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold"
+                    >Edit</a
+                  >
+                  <a
+                    href="#"
+                    class="py-2 px-4 bg-rose-600 hover:bg-rose-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold"
+                    >Delete</a
+                  >
                 </td>
               </tr>
             </tbody>
