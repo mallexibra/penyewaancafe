@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produk</title>
+    <title>Login Users</title>
     <link rel="stylesheet" href="../src/style/style.css" />
   </head>
   <body class="font-poppins">
@@ -66,61 +66,48 @@
         </div>
       </div>
     </nav>
-    <main class="mt-20 min-h-screen max-w-md mx-auto">
-      <div
-        class="profile max-w-md md:flex md:justify-center md:items-center mx-auto"
+    <main class="w-full min-h-screen bg-yellow-100 grid place-items-center">
+      <form
+        action="#"
+        class="flex flex-col mt-20 w-4/5 md:w-5/12 bg-stone-700 text-white p-6 rounded-md shadow-lg"
       >
-        <img
-          src="../src/assets/image/card.jpg"
-          class="w-44 h-44 shadow-lg ring-2 ring-stone-800 mx-auto rounded-md object-cover object-center"
-          alt="profile_user"
-        />
-        <div class="flex flex-col mt-4 md:text-left text-center">
-          <h1 class="font-bold text-stone-800">MAULANA MALIK IBRAHIM</h1>
-          <p class="text-xs">@mallexibra | Kalibaru</p>
-          <div
-            class="text-xs flex justify-center items-center gap-3 font-bold mt-3"
+        <div class="flex w-full mb-3 text-center font-semibold justify-between">
+          <a href="login.html" class="w-full block form_active rounded-sm p-2"
+            >LOGIN</a
           >
-            <button class="bg-stone-800 text-white px-3 py-2 rounded-md">
-              Sewa Sekarang
-            </button>
-            <button class="bg-stone-400 text-stone-800 px-3 py-2 rounded-md">
-              Edit Profile
-            </button>
-          </div>
+          <a href="signup.html" class="w-full block rounded-sm p-2">SIGN UP</a>
         </div>
-      </div>
-      <div class="riwayat mt-12">
-        <h1 class="text-center font-bold my-7">Riwayat Pemesanan</h1>
-        <section>
-          <a
-            href="#"
-            class="bg-stone-800 relative mb-5 text-white block p-3 rounded-md"
-          >
-            <img
-              src="../src/assets/icons/arrow-to-top-24.png"
-              class="absolute right-2 top-2"
-              alt="arrow-to-top"
-            />
-            <h1 class="font-bold">Pemesanan Nomor #12</h1>
-            <p class="text-xs">1 Barang</p>
-          </a>
-          <a
-            href="#"
-            class="bg-stone-800 relative mb-5 text-white block p-3 rounded-md"
-          >
-            <img
-              src="../src/assets/icons/arrow-to-top-24.png"
-              class="absolute right-2 top-2"
-              alt="arrow-to-top"
-            />
-            <h1 class="font-bold">Pemesanan Nomor #12</h1>
-            <p class="text-xs">1 Barang</p>
-          </a>
-        </section>
-      </div>
+        <h1 class="text-center font-extrabold text-2xl">LOGIN USERS</h1>
+        <p class="text-center text-xs my-3">Silahkan login dengan akun anda!</p>
+        <label for="username" class="flex flex-col mt-5 mb-3">
+          <span class="font-semibold">Username</span>
+          <input
+            type="text"
+            class="p-2 text-white text-xs bg-white/30 rounded-sm outline-none ring-2 ring-stone-400"
+            name="username"
+            id="username"
+          />
+        </label>
+        <label for="password" class="flex flex-col mb-3">
+          <span class="font-semibold">Password</span>
+          <input
+            type="password"
+            class="p-2 text-white text-xs bg-white/30 rounded-sm outline-none ring-2 ring-stone-400"
+            name="password"
+            id="password"
+          />
+        </label>
+        <button type="submit" class="w-full p-3 bg-stone-900 rounded font-bold">
+          Login
+        </button>
+        <a
+          href="../admin/login.html"
+          class="text-center text-xs mt-2 text-yellow-500 italic underline"
+          >Login Sebagai Admin</a
+        >
+      </form>
     </main>
-    <footer class="bg-stone-700 p-3 text-sm text-center text-white mt-6">
+    <footer class="bg-stone-700 p-3 text-sm text-center text-white">
       <p class="font-semibold">Copyright &copy; 2023 by Mallexibra</p>
     </footer>
     <script src="../src/style/script.js"></script>

@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 .containers{
-    @apply min-h-screen max-w-4xl mx-auto;
+    @apply  min-h-screen max-w-4xl  mx-auto;
 }

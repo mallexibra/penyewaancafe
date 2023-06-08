@@ -28,28 +28,24 @@
           id="sidebar"
           class="list_item text-sm font-medium fixed md:static md:bg-transparent bg-stone-800/90 w-[70%] h-screen md:h-auto top-[60px] right-0 hidden md:flex md:flex-row flex-col md:justify-end justify-center items-center gap-7"
         >
-          <img
-            class="w-7 absolute top-3 left-3 cursor-pointer md:hidden"
-            src="src/assets/icons/close.png"
-            alt="icon_close"
-            id="btn_close"
-          />
           <ul class="flex flex-col md:flex-row text-center gap-7">
             <li>
-              <a class="hover:scale-110 text-sm inline-block" href="#"
-                >Tentang Kami</a
+              <a class="hover:scale-110 text-sm inline-block" href="index.html"
+                >Dashboard</a
               >
             </li>
             <li>
               <a
                 class="hover:scale-110 text-sm inline-block"
                 href="users/produk.html"
-                >Penyewaan</a
+                >Sewa Barang</a
               >
             </li>
             <li>
-              <a class="hover:scale-110 text-sm inline-block" href="#"
-                >Kontak Kami</a
+              <a
+                class="hover:scale-110 text-sm inline-block"
+                href="users/keranjang.html"
+                >Keranjang</a
               >
             </li>
           </ul>
@@ -70,117 +66,14 @@
         </div>
       </div>
     </nav>
-    <header class="w-full min-h-[300px] bg-[url('/src/assets/image/cafe.jpg')]">
-      <div class="bungkus w-full h-full backdrop-blur-sm bg-stone-700/30">
-        <div class="containers flex justify-center items-center flex-col">
-          <div class="header-items">
-            <h1 class="pt-12 font-bold text-4xl text-white text-center">
-              LOREM IPSUM
-            </h1>
-            <p class="p-8 text-lg text-center text-white">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Similique fugit voluptatum non veritatis ad illum. Consectetur
-              autem esse nulla, reiciendis deleniti asperiores ipsum! Laudantium
-              autem quia quae est? Molestiae, placeat?
-            </p>
-            <div class="cta flex items-center justify-center pt-8">
-              <a
-                href="users/produk.html"
-                class="text-stone-800 font-bold border border-yellow-400 bg-yellow-500 hover:bg-yellow-400 transition-all duration-300 focus:ring-4 focus:ring-stone-300 rounded-lg text-sm px-7 py-4 mr-2 mb-2 focus:outline-none"
-                >Pesan Sekarang
-                <i class="fa-sharp fa-regular fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
+    <header class="mt-16 w-full min-h-[300px] bg-[url('/src/assets/image/cafe.jpg')] brightness-50">
+      <div class="containers">
+        <h1 class="text-white">Hello World!</h1>
       </div>
     </header>
-    <main class="containers">
-      <section class="my-12">
-        <h1 class="text-center text-stone-800 text-4xl pb-4 font-bold">
-          Tentang Kami
-        </h1>
-        <div class="items-wrap flex gap-3">
-          <div class="line w-4 bg-yellow-400 rounded-md"></div>
-          <p class="text-left text-lg max-w-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            odio, rem quod ab sed, in odit quaerat voluptas, fugiat inventore
-            laudantium nemo reprehenderit laboriosam at quo cupiditate totam
-            cumque officia minus vitae! Suscipit repellendus numquam magni
-            facilis eum, voluptas non perferendis architecto esse, iste libero
-            dicta saepe? Sed, iusto a.
-          </p>
-          <div
-            class="bg-[url('/src/assets/image/coffeebean.png')] bg-cover w-full"
-          ></div>
-        </div>
-      </section>
-
-        <h1 class="text-4xl text-center py-7 font-bold">Layanan Kami</h1>
-        <div class="serve-items flex justify-center gap-8">
-          <div class="serve-item flex items-center flex-col gap-4">
-            <div class="flex items-center justify-center card w-16 h-16 bg-slate-300 text-lg font-bold rounded-full">1</div>
-            <p>Pemesanan Barang</p>
-          </div>
-          <div class="serve-item flex items-center flex-col gap-4">
-            <div class="flex items-center justify-center card w-16 h-16 bg-slate-300 text-lg font-bold rounded-full">2</div>
-            <p>Pemesanan Barang</p>
-          </div>
-          <div class="serve-item flex items-center flex-col gap-4">
-            <div class="flex items-center justify-center card w-16 h-16 bg-slate-300 text-lg font-bold rounded-full">3</div>
-            <p>Pemesanan Barang</p>
-          </div>
-        </div>
-
-        <div class="question-accordion my-12">
-          
-          <h1 class="text-4xl text-center py-7 font-bold">Kenapa Pilih Kami?</h1>
-          <div id="accordion-open" data-accordion="open">
-            <h2 id="accordion-open-heading-1">
-              <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4" data-accordion-target="#accordion-open-body-1" aria-expanded="false" aria-controls="accordion-open-body-1">
-                <span class="flex items-center text-white">
-                  Lorem?
-                </span>
-                 <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </button>
-            </h2>
-            <div id="accordion-open-body-1" class="hidden" aria-labelledby="accordion-open-heading-1">
-              <div class="p-5 border border-b-0 border-gray-200">
-                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias accusamus eveniet dolor totam nulla. Officia consequatur tenetur, dolorem omnis, deleniti ut quibusdam amet cum incidunt doloribus ducimus est recusandae ea!</p>
-              </div>
-            </div>
-            <h2 id="accordion-open-heading-2">
-              <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4" data-accordion-target="#accordion-open-body-2" aria-expanded="false" aria-controls="accordion-open-body-2">
-                <span class="flex items-center text-white">
-                  Lorem?
-                </span>
-                <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </button>
-            </h2>
-            <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
-              <div class="p-5 border border-b-0 border-gray-200">
-                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, aspernatur. Omnis maxime corrupti, ab dicta accusantium error repellat beatae nihil adipisci eum eos accusamus aliquid et suscipit rem? Beatae, assumenda.</p>
-              </div>
-            </div>
-            <h2 id="accordion-open-heading-3">
-              <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4" data-accordion-target="#accordion-open-body-3" aria-expanded="false" aria-controls="accordion-open-body-3">
-                <span class="flex items-center text-white">
-                  Lorem?
-                </span>
-                <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </button>
-            </h2>
-            <div id="accordion-open-body-3" class="hidden" aria-labelledby="accordion-open-heading-3">
-              <div class="p-5 border border-t-0">
-               <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita illum praesentium dolores enim! Fugit veritatis itaque fugiat nihil accusamus consectetur sapiente, adipisci ad at excepturi quod corrupti voluptatem quos deserunt!</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
+    <main class="container">
 
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script src="src/style/script.js"></script>
   </body>
 </html>
