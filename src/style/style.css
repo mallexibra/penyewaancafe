@@ -701,6 +701,11 @@ video {
   clear: none;
 }
 
+.mx-4{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -739,11 +744,6 @@ video {
 .my-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mx-4{
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 .mb-2{
@@ -1539,10 +1539,6 @@ video {
   justify-items: stretch;
 }
 
-.gap-2{
-  gap: 0.5rem;
-}
-
 .gap-3{
   gap: 0.75rem;
 }
@@ -1561,6 +1557,10 @@ video {
 
 .gap-8{
   gap: 2rem;
+}
+
+.gap-2{
+  gap: 0.5rem;
 }
 
 .gap-x-3{
@@ -2035,9 +2035,9 @@ video {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.border-yellow-400{
+.border-rose-500{
   --tw-border-opacity: 1;
-  border-color: rgb(250 204 21 / var(--tw-border-opacity));
+  border-color: rgb(244 63 94 / var(--tw-border-opacity));
 }
 
 .border-stone-950{
@@ -2045,9 +2045,9 @@ video {
   border-color: rgb(12 10 9 / var(--tw-border-opacity));
 }
 
-.border-rose-500{
+.border-yellow-400{
   --tw-border-opacity: 1;
-  border-color: rgb(244 63 94 / var(--tw-border-opacity));
+  border-color: rgb(250 204 21 / var(--tw-border-opacity));
 }
 
 .bg-\[rgb\(255\2c 0\2c 0\)\]{
@@ -2307,10 +2307,6 @@ video {
   padding: 2rem;
 }
 
-.p-10{
-  padding: 2.5rem;
-}
-
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2354,21 +2350,6 @@ video {
 .py-7{
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
-}
-
-.px-8{
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.px-11{
-  padding-left: 2.75rem;
-  padding-right: 2.75rem;
-}
-
-.px-10{
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
 }
 
 .pb-2{
@@ -3120,11 +3101,6 @@ video {
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-yellow-600:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(202 138 4 / var(--tw-bg-opacity));
-}
-
 .hover\:font-bold:hover{
   font-weight: 700;
 }
@@ -3271,17 +3247,11 @@ video {
     text-align: left;
   }
 
-
   .md\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
-}
-  
-  .md\:text-base{
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
-
+}
 
 @media (prefers-color-scheme: dark){
   @media (min-width: 1024px){
