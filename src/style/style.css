@@ -721,6 +721,11 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .my-5{
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -729,6 +734,16 @@ video {
 .my-7{
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
+}
+
+.my-8{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mx-4{
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .mb-2{
@@ -2011,6 +2026,16 @@ video {
   border-color: rgb(250 204 21 / var(--tw-border-opacity));
 }
 
+.border-stone-950{
+  --tw-border-opacity: 1;
+  border-color: rgb(12 10 9 / var(--tw-border-opacity));
+}
+
+.border-rose-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(244 63 94 / var(--tw-border-opacity));
+}
+
 .bg-\[rgb\(255\2c 0\2c 0\)\]{
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
@@ -2263,6 +2288,10 @@ video {
   padding: 2rem;
 }
 
+.p-10{
+  padding: 2.5rem;
+}
+
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2306,6 +2335,21 @@ video {
 .py-7{
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
+}
+
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-11{
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+}
+
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .pb-2{
@@ -2980,6 +3024,16 @@ video {
   }
 }
 
+.placeholder\:text-xs::-moz-placeholder{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.placeholder\:text-xs::placeholder{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .placeholder\:italic::-moz-placeholder{
   font-style: italic;
 }
@@ -3042,6 +3096,16 @@ video {
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-yellow-500:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-yellow-600:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 138 4 / var(--tw-bg-opacity));
+}
+
 .hover\:font-bold:hover{
   font-weight: 700;
 }
@@ -3095,6 +3159,11 @@ video {
 }
 
 @media (min-width: 640px){
+  .sm\:mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .sm\:p-0{
     padding: 0px;
   }
@@ -3181,6 +3250,11 @@ video {
 
   .md\:text-left{
     text-align: left;
+  }
+
+  .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
