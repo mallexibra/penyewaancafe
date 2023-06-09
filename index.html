@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Penyewaan Coffee</title>
     <link rel="stylesheet" href="src/style/style.css" />
-    <script src="https://kit.fontawesome.com/d2632f5afd.js" crossorigin="anonymous"></script>
   </head>
   <body class="font-poppins bg-stone-400">
     <nav
@@ -86,10 +85,9 @@
             <div class="cta flex items-center justify-center pt-8">
               <a
                 href="users/produk.html"
-                class="text-stone-800 font-bold border border-yellow-400 bg-yellow-500 hover:bg-yellow-400 transition-all duration-300 focus:ring-4 focus:ring-stone-300 rounded-lg text-sm px-7 py-4 mr-2 mb-2 focus:outline-none"
+                class="flex gap-2 text-stone-800 font-bold border border-yellow-400 bg-yellow-500 hover:bg-yellow-400 transition-all duration-300 focus:ring-4 focus:ring-stone-300 rounded-lg text-sm px-7 py-4 mr-2 mb-2 focus:outline-none"
                 >Pesan Sekarang
-                <i class="fa-sharp fa-regular fa-arrow-right"></i
-              ></a>
+                <img src="src/assets/icons/arrow-r.png" alt=""></a>
             </div>
           </div>
         </div>
@@ -97,12 +95,12 @@
     </header>
     <main class="containers">
       <section class="my-12">
-        <h1 class="text-center text-stone-800 text-4xl pb-4 font-bold">
+        <h1 class="text-center text-stone-800 text-2xl pb-4 font-bold">
           Tentang Kami
         </h1>
         <div class="items-wrap flex gap-3">
           <div class="line w-4 bg-yellow-400 rounded-md"></div>
-          <p class="text-left text-lg max-w-xl">
+          <p class="text-left text-sm max-w-xl md:text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
             odio, rem quod ab sed, in odit quaerat voluptas, fugiat inventore
             laudantium nemo reprehenderit laboriosam at quo cupiditate totam
@@ -116,28 +114,32 @@
         </div>
       </section>
 
-        <h1 class="text-4xl text-center py-7 font-bold">Layanan Kami</h1>
-        <div class="serve-items flex justify-center gap-8">
+        <h1 class="text-center text-stone-800 text-2xl pb-4 font-bold">
+          Layanan Kami
+        </h1>
+        <div class="serve-items flex flex-col md:flex-row justify-center gap-8">
           <div class="serve-item flex items-center flex-col gap-4">
-            <div class="flex items-center justify-center card w-16 h-16 bg-slate-300 text-lg font-bold rounded-full">1</div>
+            <div class="flex items-center justify-center card w-16 h-16 bg-stone-300 text-lg font-bold rounded-full text-center">1</div>
             <p>Pemesanan Barang</p>
           </div>
           <div class="serve-item flex items-center flex-col gap-4">
-            <div class="flex items-center justify-center card w-16 h-16 bg-slate-300 text-lg font-bold rounded-full">2</div>
+            <div class="flex items-center justify-center card w-16 h-16 bg-stone-300 text-lg font-bold rounded-full text-center">2</div>
             <p>Pemesanan Barang</p>
           </div>
           <div class="serve-item flex items-center flex-col gap-4">
-            <div class="flex items-center justify-center card w-16 h-16 bg-slate-300 text-lg font-bold rounded-full">3</div>
+            <div class="flex items-center justify-center card w-16 h-16 bg-stone-300 text-lg font-bold rounded-full text-center">3</div>
             <p>Pemesanan Barang</p>
           </div>
         </div>
 
         <div class="question-accordion my-12">
           
-          <h1 class="text-4xl text-center py-7 font-bold">Kenapa Pilih Kami?</h1>
+          <h1 class="text-center text-stone-800 text-2xl pb-4 font-bold">
+            Tentang Kami
+          </h1>          
           <div id="accordion-open" data-accordion="open">
             <h2 id="accordion-open-heading-1">
-              <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4" data-accordion-target="#accordion-open-body-1" aria-expanded="false" aria-controls="accordion-open-body-1">
+              <button type="button" class="flex rounded-t-md items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 bg-stone-700" data-accordion-target="#accordion-open-body-1" aria-expanded="false" aria-controls="accordion-open-body-1">
                 <span class="flex items-center text-white">
                   Lorem?
                 </span>
@@ -145,12 +147,12 @@
               </button>
             </h2>
             <div id="accordion-open-body-1" class="hidden" aria-labelledby="accordion-open-heading-1">
-              <div class="p-5 border border-b-0 border-gray-200">
+              <div class="p-5 border border-b-0 bg-stone-500 border-gray-200">
                 <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias accusamus eveniet dolor totam nulla. Officia consequatur tenetur, dolorem omnis, deleniti ut quibusdam amet cum incidunt doloribus ducimus est recusandae ea!</p>
               </div>
             </div>
             <h2 id="accordion-open-heading-2">
-              <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4" data-accordion-target="#accordion-open-body-2" aria-expanded="false" aria-controls="accordion-open-body-2">
+              <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 bg-stone-700" data-accordion-target="#accordion-open-body-2" aria-expanded="false" aria-controls="accordion-open-body-2">
                 <span class="flex items-center text-white">
                   Lorem?
                 </span>
@@ -158,12 +160,12 @@
               </button>
             </h2>
             <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
-              <div class="p-5 border border-b-0 border-gray-200">
+              <div class="p-5 border border-b-0 border-gray-200 bg-stone-500">
                 <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, aspernatur. Omnis maxime corrupti, ab dicta accusantium error repellat beatae nihil adipisci eum eos accusamus aliquid et suscipit rem? Beatae, assumenda.</p>
               </div>
             </div>
             <h2 id="accordion-open-heading-3">
-              <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4" data-accordion-target="#accordion-open-body-3" aria-expanded="false" aria-controls="accordion-open-body-3">
+              <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 bg-stone-700 rounded-b-md" data-accordion-target="#accordion-open-body-3" aria-expanded="false" aria-controls="accordion-open-body-3">
                 <span class="flex items-center text-white">
                   Lorem?
                 </span>
@@ -171,7 +173,7 @@
               </button>
             </h2>
             <div id="accordion-open-body-3" class="hidden" aria-labelledby="accordion-open-heading-3">
-              <div class="p-5 border border-t-0">
+              <div class="p-5 border border-t-0 bg-stone-500">
                <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita illum praesentium dolores enim! Fugit veritatis itaque fugiat nihil accusamus consectetur sapiente, adipisci ad at excepturi quod corrupti voluptatem quos deserunt!</p>
               </div>
             </div>
