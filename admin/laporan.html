@@ -19,9 +19,22 @@
         <h1 class="font-bold">Maulana Malik Ibrahim</h1>
         <img
           src="../src/assets/icons/arrow.png"
-          class="w-5 rotate-180"
+          class="w-5 rotate-180 cursor-pointer"
+          id="arrow_nav_admin"
           alt="arrow"
         />
+        <ul
+          class="bg-stone-600 text-xs hidden overflow-hidden font-semibold border border-stone-500 absolute right-3 -bottom-5 rounded"
+          id="nav_admin"
+        >
+          <li>
+            <a
+              href="#"
+              class="px-2 py-1 inline-block transition-all duration-300 ease-in-out hover:bg-stone-800"
+              >Logout</a
+            >
+          </li>
+        </ul>
       </div>
     </nav>
     <main class="min-h-screen mt-12">
@@ -78,12 +91,11 @@
       <section class="ml-20 mt-4 md:ml-48">
         <div class="w-full p-5">
           <h1
-            class="text-center w-full mx-auto block text-2xl text-stone-800 font-extrabold"
+            class="text-center w-full mx-auto block text-2xl text-stone-700 font-extrabold"
           >
             LAPORAN PAGE
           </h1>
         </div>
-        <div class="grafik"></div>
         <div
           class="overflow-x-scroll md:w-full md:overflow-x-visible max-w-lg grid place-items-center mx-auto"
         >
@@ -119,12 +131,7 @@
                   <a
                     href="#"
                     class="py-2 px-4 bg-blue-600 hover:bg-blue-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold"
-                    >Edit</a
-                  >
-                  <a
-                    href="#"
-                    class="py-2 px-4 bg-rose-600 hover:bg-rose-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold"
-                    >Delete</a
+                    >Kirim Pesanan</a
                   >
                 </td>
               </tr>
@@ -136,5 +143,6 @@
     <footer class="bg-stone-700 p-3 text-sm text-center text-white">
       <p class="font-semibold">Copyright &copy; 2023 by Mallexibra</p>
     </footer>
+    <script src="../src/style/scriptAdmin.js"></script>
   </body>
 </html>

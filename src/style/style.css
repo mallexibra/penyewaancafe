@@ -625,8 +625,12 @@ video {
   inset: -0.25rem;
 }
 
+
 .bottom-0{
   bottom: 0px;
+}
+.-bottom-11{
+  bottom: -2.75rem;
 }
 
 .end-1{
@@ -649,6 +653,10 @@ video {
   right: 0.5rem;
 }
 
+.right-3{
+  right: 0.75rem;
+}
+
 .top-0{
   top: 0px;
 }
@@ -663,6 +671,10 @@ video {
 
 .top-\[60px\]{
   top: 60px;
+}
+
+.-bottom-5{
+  bottom: -1.25rem;
 }
 
 .isolate{
@@ -2059,6 +2071,11 @@ video {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
+.border-stone-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(120 113 108 / var(--tw-border-opacity));
+}
+
 .border-stone-950{
   --tw-border-opacity: 1;
   border-color: rgb(12 10 9 / var(--tw-border-opacity));
@@ -2295,6 +2312,10 @@ video {
 .object-center{
   -o-object-position: center;
      object-position: center;
+}
+
+.p-1{
+  padding: 0.25rem;
 }
 
 .p-2{
@@ -2573,11 +2594,6 @@ video {
 .text-gray-500{
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-.text-rose-200{
-  --tw-text-opacity: 1;
-  color: rgb(254 205 211 / var(--tw-text-opacity));
 }
 
 .text-stone-500{
@@ -3080,10 +3096,6 @@ video {
 .hover\:bg-rose-700:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(190 18 60 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-stone-600\/50:hover{
-  background-color: rgb(87 83 78 / 0.5);
 }
 
 .hover\:bg-stone-700:hover{
