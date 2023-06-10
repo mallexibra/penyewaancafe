@@ -19,9 +19,22 @@
         <h1 class="font-bold">Maulana Malik Ibrahim</h1>
         <img
           src="../src/assets/icons/arrow.png"
-          class="w-5 rotate-180"
+          class="w-5 rotate-180 cursor-pointer"
+          id="arrow_nav_admin"
           alt="arrow"
         />
+        <ul
+          class="bg-stone-600 text-xs hidden overflow-hidden font-semibold border border-stone-500 absolute right-3 -bottom-5 rounded"
+          id="nav_admin"
+        >
+          <li>
+            <a
+              href="#"
+              class="px-2 py-1 inline-block transition-all duration-300 ease-in-out hover:bg-stone-800"
+              >Logout</a
+            >
+          </li>
+        </ul>
       </div>
     </nav>
     <main class="min-h-screen mt-12">
@@ -130,5 +143,6 @@
     <footer class="bg-stone-700 p-3 text-sm text-center text-white">
       <p class="font-semibold">Copyright &copy; 2023 by Mallexibra</p>
     </footer>
+    <script src="../src/style/script.js"></script>
   </body>
 </html>

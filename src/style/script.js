@@ -5,3 +5,9 @@ burger.addEventListener("click", () => {
   sidebar.classList.toggle("hidden");
   sidebar.classList.toggle("flex");
 });
+
+const arrowNavAdmin = document.getElementById("arrow_nav_admin");
+const navAdmin = document.getElementById("nav_admin");
+arrowNavAdmin.addEventListener("click", () => {
+  navAdmin.classList.toggle("hidden");
+});
