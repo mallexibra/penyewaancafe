@@ -5,3 +5,5 @@ burger.addEventListener("click", () => {
   sidebar.classList.toggle("hidden");
   sidebar.classList.toggle("flex");
 });
+document.getElementById("year").textContent = new Date().getFullYear();
+
