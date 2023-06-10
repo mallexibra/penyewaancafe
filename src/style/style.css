@@ -625,6 +625,10 @@ video {
   inset: -0.25rem;
 }
 
+
+.bottom-0{
+  bottom: 0px;
+}
 .-bottom-11{
   bottom: -2.75rem;
 }
@@ -917,8 +921,16 @@ video {
   display: none;
 }
 
+.h-10{
+  height: 2.5rem;
+}
+
 .h-16{
   height: 4rem;
+}
+
+.h-4{
+  height: 1rem;
 }
 
 .h-44{
@@ -937,12 +949,20 @@ video {
   height: 100vh;
 }
 
+.h-5{
+  height: 1.25rem;
+}
+
 .min-h-\[300px\]{
   min-height: 300px;
 }
 
 .min-h-screen{
   min-height: 100vh;
+}
+
+.w-10{
+  width: 2.5rem;
 }
 
 .w-16{
@@ -1561,6 +1581,10 @@ video {
 
 .gap-4{
   gap: 1rem;
+}
+
+.gap-5{
+  gap: 1.25rem;
 }
 
 .gap-6{
