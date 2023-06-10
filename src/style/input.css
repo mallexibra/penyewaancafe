@@ -8,6 +8,10 @@
   @apply min-h-screen max-w-4xl  mx-auto;
 }
 
+.active_category {
+  @apply bg-stone-700 text-white;
+}
+
 .sidebar_active {
   @apply bg-stone-800;
 }
