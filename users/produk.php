@@ -8,6 +8,15 @@ if (!isset($_SESSION['user'])) {
   exit();
 }
 
+if (isset($_GET['search'])) {
+  $keyword = $_GET['search'];
+  $query = mysqli_query($mysqli, "SELECT * FROM produk WHERE nama LIKE '%" . $keyword . "%'");
+} else {
+  $query = mysqli_query($mysqli, "SELECT * FROM produk");
+}
+
+$category = mysqli_query($mysqli, "SELECT * FROM kategori_produk");
+
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +26,8 @@ if (!isset($_SESSION['user'])) {
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Produk</title>
-  <link rel="stylesheet" href="../src/style/style.css" />
+  <title>Penyewaan | CAFESTUFF</title>
+  <link rel="stylesheet" href="../src/style/style.css?v=<?php echo time(); ?>" />
 </head>
 
 <body class="font-poppins">
@@ -50,96 +59,29 @@ if (!isset($_SESSION['user'])) {
   </nav>
   <main class="mt-16 w-full min-h-screen">
     <div class="mx-auto max-w-4xl px-3 sm:p-0">
-      <div class="search p-3 flex justify-center items-center gap-3">
+      <form method="get" class="search p-3 flex justify-center items-center gap-3">
         <input class="bg-stone-700/50 ring-2 ring-stone-700 outline-none placeholder:italic placeholder:text-stone-300 p-2 rounded-md w-3/4" type="text" placeholder="Cari barangmu disini" name="search" id="search" />
         <button class="bg-stone-700 p-3 text-white rounded-md text-sm">
           Search
         </button>
+      </form>
+      <div class="category flex gap-x-3 overflow-x-scroll p-3" id="category">
+        <span class="active_category px-3 py-2 ring-2 ring-stone-700 cursor-pointer rounded-md" name="all" id="category_item">Semua</span>
+        <?php while ($row = mysqli_fetch_assoc($category)) : ?>
+          <span class="ring-2 ring-stone-700 block min-w-max cursor-pointer rounded-md px-3 py-2" name="<?= $row['id'] ?>" id="category_item"><?= $row['nama'] ?></span>
+        <?php endwhile; ?>
       </div>
-      <div class="category flex gap-x-3 overflow-x-scroll p-3">
-        <span class="active_category px-3 py-2 ring-2 ring-stone-700 rounded-md">Semua</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-        <span class="ring-2 ring-stone-700 rounded-md px-3 py-2">Oven</span>
-      </div>
-      <section class="mt-3 flex gap-4 justify-center flex-wrap">
-        <span class="card inline-flex flex-col bg-stone-500 text-white rounded-md overflow-hidden ring-2 ring-stone-700">
-          <img src="../src/assets/image/card.jpg" alt="" class="w-52 rounded-sm inline-block" />
-          <div class="p-2">
-            <h2 class="font-bold">Hello World!</h2>
-            <p class="text-xs pb-2">Rp. 17.000 / day</p>
-            <a class="bg-stone-800 hover:bg-stone-700 block text-center rounded-md text-xs font-bold p-2" href="#">Lihat Detail</a>
-          </div>
-        </span>
-        <span class="card inline-flex flex-col bg-stone-500 text-white rounded-md overflow-hidden ring-2 ring-stone-700">
-          <img src="../src/assets/image/card.jpg" alt="" class="w-52 rounded-sm inline-block" />
-          <div class="p-2">
-            <h2 class="font-bold">Hello World!</h2>
-            <p class="text-xs pb-2">Rp. 17.000 / day</p>
-            <a class="bg-stone-800 hover:bg-stone-700 block text-center rounded-md text-xs font-bold p-2" href="detailproduk.html">Lihat Detail</a>
-          </div>
-        </span>
-        <span class="card inline-flex flex-col bg-stone-500 text-white rounded-md overflow-hidden ring-2 ring-stone-700">
-          <img src="../src/assets/image/card.jpg" alt="" class="w-52 rounded-sm inline-block" />
-          <div class="p-2">
-            <h2 class="font-bold">Hello World!</h2>
-            <p class="text-xs pb-2">Rp. 17.000 / day</p>
-            <a class="bg-stone-800 hover:bg-stone-700 block text-center rounded-md text-xs font-bold p-2" href="#">Lihat Detail</a>
-          </div>
-        </span>
-        <span class="card inline-flex flex-col bg-stone-500 text-white rounded-md overflow-hidden ring-2 ring-stone-700">
-          <img src="../src/assets/image/card.jpg" alt="" class="w-52 rounded-sm inline-block" />
-          <div class="p-2">
-            <h2 class="font-bold">Hello World!</h2>
-            <p class="text-xs pb-2">Rp. 17.000 / day</p>
-            <a class="bg-stone-800 hover:bg-stone-700 block text-center rounded-md text-xs font-bold p-2" href="#">Lihat Detail</a>
-          </div>
-        </span>
-        <span class="card inline-flex flex-col bg-stone-500 text-white rounded-md overflow-hidden ring-2 ring-stone-700">
-          <img src="../src/assets/image/card.jpg" alt="" class="w-52 rounded-sm inline-block" />
-          <div class="p-2">
-            <h2 class="font-bold">Hello World!</h2>
-            <p class="text-xs pb-2">Rp. 17.000 / day</p>
-            <a class="bg-stone-800 hover:bg-stone-700 block text-center rounded-md text-xs font-bold p-2" href="#">Lihat Detail</a>
-          </div>
-        </span>
-        <span class="card inline-flex flex-col bg-stone-500 text-white rounded-md overflow-hidden ring-2 ring-stone-700">
-          <img src="../src/assets/image/card.jpg" alt="" class="w-52 rounded-sm inline-block" />
-          <div class="p-2">
-            <h2 class="font-bold">Hello World!</h2>
-            <p class="text-xs pb-2">Rp. 17.000 / day</p>
-            <a class="bg-stone-800 hover:bg-stone-700 block text-center rounded-md text-xs font-bold p-2" href="#">Lihat Detail</a>
-          </div>
-        </span>
-        <span class="card inline-flex flex-col bg-stone-500 text-white rounded-md overflow-hidden ring-2 ring-stone-700">
-          <img src="../src/assets/image/card.jpg" alt="" class="w-52 rounded-sm inline-block" />
-          <div class="p-2">
-            <h2 class="font-bold">Hello World!</h2>
-            <p class="text-xs pb-2">Rp. 17.000 / day</p>
-            <a class="bg-stone-800 hover:bg-stone-700 block text-center rounded-md text-xs font-bold p-2" href="#">Lihat Detail</a>
-          </div>
-        </span>
-        <span class="card inline-flex flex-col bg-stone-500 text-white rounded-md overflow-hidden ring-2 ring-stone-700">
-          <img src="../src/assets/image/card.jpg" alt="" class="w-52 rounded-sm inline-block" />
-          <div class="p-2">
-            <h2 class="font-bold">Hello World!</h2>
-            <p class="text-xs pb-2">Rp. 17.000 / day</p>
-            <a class="bg-stone-800 hover:bg-stone-700 block text-center rounded-md text-xs font-bold p-2" href="#">Lihat Detail</a>
-          </div>
-        </span>
+      <section class="mt-3 flex gap-4 justify-center flex-wrap" id="produk">
+        <?php while ($row = mysqli_fetch_assoc($query)) : ?>
+          <span class="card w-52 inline-flex flex-col bg-stone-500 text-white rounded-md overflow-hidden ring-2 ring-stone-700">
+            <img src="../src/assets/produk/<?= $row['gambar'] ?>" alt="" class="w-52 rounded-sm inline-block" />
+            <div class="p-2">
+              <h2 class="font-bold"><?= $row['nama'] ?></h2>
+              <p class="text-xs pb-2">Rp. <?= $row['harga'] ?> / day</p>
+              <a class="bg-stone-800 hover:bg-stone-700 block text-center rounded-md text-xs font-bold p-2" href="detailproduk.php?id=<?= $row['id'] ?>">Lihat Detail</a>
+            </div>
+          </span>
+        <?php endwhile; ?>
       </section>
     </div>
   </main>
@@ -148,6 +90,47 @@ if (!isset($_SESSION['user'])) {
   </footer>
 
   <script src="../src/style/script.js"></script>
+  <script>
+    const category = document.getElementById("category");
+    const category_item = document.querySelectorAll("#category_item");
+    const page = document.getElementById("produk");
+    category_item.forEach((e) => {
+      e.addEventListener("click", () => {
+        category_item.forEach((i) => {
+          i.classList.remove("active_category")
+        })
+        e.classList.add("active_category");
+        let id = e.getAttribute('name');
+        if (id == "all") {
+          fetchDataAll(page);
+        } else {
+          fetchData(id, page);
+        }
+      })
+    })
+
+    function fetchData(id, page) {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          page.innerHTML = xhr.responseText;
+        }
+      };
+      xhr.open("GET", "fetch_data.php?id=" + id, true);
+      xhr.send();
+    }
+
+    function fetchDataAll(page) {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          page.innerHTML = xhr.responseText;
+        }
+      };
+      xhr.open("GET", "fetch_data_all.php", true);
+      xhr.send();
+    }
+  </script>
 </body>
 
 </html>

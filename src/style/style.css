@@ -1006,6 +1006,11 @@ video {
   width: max-content;
 }
 
+.min-w-max{
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
 .max-w-2xl{
   max-width: 42rem;
 }
@@ -2872,6 +2877,11 @@ video {
 .ring-stone-800{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(41 37 36 / var(--tw-ring-opacity));
+}
+
+.ring-red-700{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(185 28 28 / var(--tw-ring-opacity));
 }
 
 .blur{

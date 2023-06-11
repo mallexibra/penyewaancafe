@@ -21,15 +21,15 @@
           <a class="hover:scale-110 text-sm inline-block" href="../index.html">Dashboard</a>
         </li>
         <li>
-          <a class="hover:scale-110 text-sm inline-block" href="produk.html">Sewa Barang</a>
+          <a class="hover:scale-110 text-sm inline-block" href="produk.php]">Sewa Barang</a>
         </li>
         <li>
-          <a class="hover:scale-110 text-sm inline-block" href="keranjang.html">Keranjang</a>
+          <a class="hover:scale-110 text-sm inline-block" href="keranjang.php]">Keranjang</a>
         </li>
       </ul>
       <div class="btn flex md:flex-row flex-col md:flex-wrap text-center gap-7">
-        <a class="bg-yellow-400 hover:bg-transparent hover:text-yellow-400 transition-all ease-in-out duration-150 border-2 border-yellow-400 px-3 py-1 rounded-sm text-stone-800 font-semibold" href="signup.html">Sign Up</a>
-        <a class="px-3 py-1 text-yellow-400 hover:bg-yellow-400 hover:text-stone-800 font-semibold transition-all ease-in-out duration-150 border-2 border-yellow-400 rounded-sm" href="login.html">Login</a>
+        <a class="bg-yellow-400 hover:bg-transparent hover:text-yellow-400 transition-all ease-in-out duration-150 border-2 border-yellow-400 px-3 py-1 rounded-sm text-stone-800 font-semibold" href="signup.php]">Sign Up</a>
+        <a class="px-3 py-1 text-yellow-400 hover:bg-yellow-400 hover:text-stone-800 font-semibold transition-all ease-in-out duration-150 border-2 border-yellow-400 rounded-sm" href="login.php]">Login</a>
       </div>
     </div>
   </div>
