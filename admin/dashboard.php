@@ -9,6 +9,8 @@ if (!isset($_SESSION['name'])) {
 
 $result = mysqli_query($mysqli, "SELECT * FROM user");
 
+$query = mysqli_query($mysqli, "SELECT p.id AS id_produk, p.gambar, p.nama AS nama_produk, p.harga, p.stok, kp.nama AS nama_kategori, p.deskripsi FROM produk AS p INNER JOIN kategori_produk AS kp ON p.kategori = kp.id");
+
 ?>
 
 <!DOCTYPE html>
@@ -115,29 +117,39 @@ $result = mysqli_query($mysqli, "SELECT * FROM user");
             <th class="p-3">NO</th>
             <th>GAMBAR</th>
             <th>NAMA</th>
+            <th>HARGA</th>
             <th>STOK</th>
             <th>KATEGORI</th>
             <th>DESCRIPTION</th>
           </thead>
           <tbody>
-            <tr class="bg-white border-b text-stone-900">
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                1
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium">NULL</td>
-            </tr>
+            <?php $no = 1; ?>
+            <?php while ($row = mysqli_fetch_assoc($query)) : ?>
+              <tr class="bg-white border-b text-stone-900">
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $no ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <img src="../src/assets/produk/<?= $row['gambar'] ?>" alt="Gambar Produk" width="120px">
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $row['nama_produk'] ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  Rp. <?= $row['harga'] ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $row['stok'] ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $row['nama_kategori'] ?>
+                </td>
+                <td class="px-2 py-4 border font-medium" width="400">
+                  <?= $row['deskripsi'] ?>
+                </td>
+              </tr>
+              <?php $no++; ?>
+            <?php endwhile; ?>
           </tbody>
         </table>
       </div>
