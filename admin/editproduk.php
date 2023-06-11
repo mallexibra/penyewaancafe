@@ -90,18 +90,24 @@ $result = mysqli_query($mysqli, "SELECT * FROM kategori_produk");
     $kategori = $_POST['kategori'];
     $deskripsi = $_POST['deskripsi'];
     $gambarlama = "../src/assets/produk/" . $row['gambar'];
+    // $imageName = $_FILES['image']['name'];
     $gambarbaru = uniqid() . '_' . $_FILES['gambar']['name'];
+    $imageTmp = $_FILES['gambar']['tmp_name'];
+    $targetFile = "../src/assets/produk/" . $gambarbaru;
 
-    if (move_uploaded_file($gambarlama, $gambarbaru)) {
-      unlink($gambarlama);
-      mysqli_query($mysqli, "UPDATE produk SET nama = '$nama', harga = $harga, kategori = $kategori, deskripsi = '$deskripsi', gambar = '$gambarbaru' WHERE id = $id");
+    if ($_FILES['gambar']['error'] == 4) {
+      mysqli_query($mysqli, "UPDATE produk SET nama = '$nama', harga = $harga, kategori = $kategori, deskripsi = '$deskripsi' WHERE id = $id");
       $_SESSION['alert'] = "Data berhasil diupdate!";
       header("Location: produk.php");
       exit();
     } else {
-      $_SESSION['alert'] = "Data berhasil diupdate!";
-      header("Location: produk.php");
-      exit();
+      if (move_uploaded_file($imageTmp, $targetFile)) {
+        unlink($gambarlama);
+        mysqli_query($mysqli, "UPDATE produk SET nama = '$nama', harga = $harga, kategori = $kategori, deskripsi = '$deskripsi', gambar = '$gambarbaru' WHERE id = $id");
+        $_SESSION['alert'] = "Data berhasil diupdate!";
+        header("Location: produk.php");
+        exit();
+      }
     }
   }
 
