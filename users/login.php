@@ -78,7 +78,8 @@ $query = mysqli_query($mysqli, "SELECT * FROM user");
 
     while ($row = mysqli_fetch_assoc($query)) {
       if ($username == $row['username'] && $password == $row['password']) {
-        $_SESSION['user'] = $row['nama'];
+        $_SESSION['user'] = strtoupper($row['nama']);
+        $_SESSION['id_user'] = $row['id'];
         header("Location: produk.php");
         exit();
       }

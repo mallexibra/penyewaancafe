@@ -750,6 +750,11 @@ video {
   margin-bottom: 2rem;
 }
 
+.my-6{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .mb-2{
   margin-bottom: 0.5rem;
 }
@@ -2877,11 +2882,6 @@ video {
 .ring-stone-800{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(41 37 36 / var(--tw-ring-opacity));
-}
-
-.ring-red-700{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(185 28 28 / var(--tw-ring-opacity));
 }
 
 .blur{

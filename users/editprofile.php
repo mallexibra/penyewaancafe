@@ -4,16 +4,16 @@ session_start();
 include '../src/model/conDB.php';
 
 if (!isset($_SESSION['user'])) {
-  echo "<script>window.location.href = 'login.php'</script>";
+  header("Location: login.php");
   exit();
 }
 
 $id = $_GET['id'];
-$query = mysqli_query($mysqli, "SELECT * FROM produk WHERE id = $id");
+
+$query = mysqli_query($mysqli, "SELECT * FROM user WHERE id = $id");
 $row = mysqli_fetch_assoc($query);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +22,7 @@ $row = mysqli_fetch_assoc($query);
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Produk</title>
-  <link rel="stylesheet" href="../src/style/style.css" />
+  <link rel="stylesheet" href="../src/style/style.css?v=<?php echo time(); ?>" />
 </head>
 
 <body class="font-poppins">
@@ -64,40 +64,63 @@ $row = mysqli_fetch_assoc($query);
       </div>
     </div>
   </nav>
-  <main class="mt-16 min-h-screen">
-    <div class="mx-auto max-w-4xl p-3 sm:p-0">
-      <div class="p-2 ring-2 ring-stone-700 rounded-md">
-        <img src="../src/assets/produk/<?= $row['gambar'] ?>" alt="produk" class="block w-full rounded-md" />
-        <div class="details mt-3">
-          <h1 class="font-bold text-lg">Deskripsi</h1>
-          <p class="text-xs">
-            <?= $row['deskripsi'] ?>
-          </p>
-          <h1 class="font-bold text-lg mt-3">Harga (Rp.)</h1>
-          <p class="text-xs font-medium">Rp. <?= $row['harga'] ?> / day</p>
-          <h1 class="font-bold text-lg mt-3">Pemesanan</h1>
-          <form action="" method="get">
-            <label for="waktu" class="text-xs font-medium block mb-3">
-              <span>Waktu: </span>
-              <input type="number" name="waktu" id="waktu" class="p-1 outline-none border border-stone-800 rounded" />
-              <span>Hari</span>
-            </label>
-            <label for="jumlah" class="text-xs font-medium block">
-              <span>Jumlah: </span>
-              <input type="number" name="jumlah" id="jumlah" class="p-1 outline-none border border-stone-800 rounded" />
-              <span>Barang</span>
-            </label>
-            <button name="addcart" class="my-3 font-bold bg-stone-800 text-white p-2 w-full rounded-md">
-              Tambahkan ke keranjang
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+  <main class="mt-20 min-h-screen max-w-md mx-auto">
+    <h1 class="text-center font-bold text-2xl my-3">EDIT PROFILE</h1>
+    <form action="" method="post" class="flex flex-col">
+      <!-- <img src="../src/assets/image/card.jpg" class="block w-44 h-44 ring-2 ring-stone-800 rounded-md mx-auto object-cover" alt="image_profile" />
+      <label for="profile" class="mx-auto flex flex-row items-center cursor-pointer gap-3 text-blue-700 font-semibold my-3">
+        <img src="../src/assets/icons/camera.png" class="w-5" alt="icon_camera" />
+        <span>Ubah Profile</span>
+        <input type="file" class="hidden" name="profile" id="profile" />
+      </label> -->
+      <label for="nama" class="flex flex-col my-3">
+        <span class="font-semibold">Nama</span>
+        <input type="text" class="w-full text-xs ring-2 ring-stone-700 p-2 rounded-md" value="<?= $row['nama'] ?>" placeholder="Nama anda ..." name="nama" id="nama" />
+      </label>
+      <label for="username" class="flex flex-col my-3">
+        <span class="font-semibold">Username</span>
+        <input type="text" class="w-full text-xs ring-2 ring-stone-700 p-2 rounded-md" value="<?= $row['username'] ?>" placeholder="Username anda ..." name="username" id="username" />
+      </label>
+      <label for="password" class="flex flex-col my-3">
+        <span class="font-semibold">Password</span>
+        <input type="password" class="w-full text-xs ring-2 ring-stone-700 p-2 rounded-md" value="<?= $row['password'] ?>" placeholder="Password anda ..." name="password" id="password" />
+      </label>
+      <label for="alamat" class="flex flex-col my-3">
+        <span class="font-semibold">Alamat</span>
+        <input type="text" class="w-full text-xs ring-2 ring-stone-700 p-2 rounded-md" value="<?= $row['alamat'] ?>" placeholder="Alamat anda ..." name="alamat" id="alamat" />
+      </label>
+      <button name="edit" class="w-full bg-stone-700 shadow-md p-2 rounded-md text-white hover:bg-stone-800 transition-all duration-300 font-bold" type="submit">
+        Edit Profile
+      </button>
+      <button name="delete" class="w-full bg-rose-600 shadow-md p-2 my-3 rounded-md text-white hover:bg-rose-700 transition-all duration-300 font-bold" type="submit">
+        Delete Profile
+      </button>
+    </form>
   </main>
   <footer class="bg-stone-700 p-3 text-sm text-center text-white mt-6">
     <p class="font-semibold">Copyright &copy; 2023 by Mallexibra</p>
   </footer>
+  <?php
+
+  if (isset($_POST['edit'])) {
+    $nama = $_POST['nama'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $alamat = $_POST['alamat'];
+
+    if (mysqli_query($mysqli, "UPDATE user SET nama='$nama', username='$username', password='$password', alamat='$alamat' WHERE id=$id")) {
+      var_dump($_POST);
+      echo "<script>window.location.href='profile.php?id=" . $row['id'] .  "'</script>";
+      exit();
+    }
+  } elseif (isset($_POST['delete'])) {
+    if (mysqli_query($mysqli, "DELETE FROM user WHERE id = $id")) {
+      echo "<script>window.location.href='login.php'</script>";
+      exit();
+    }
+  }
+
+  ?>
   <script src="../src/style/script.js"></script>
 </body>
 

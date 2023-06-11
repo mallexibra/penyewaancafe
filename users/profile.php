@@ -4,16 +4,16 @@ session_start();
 include '../src/model/conDB.php';
 
 if (!isset($_SESSION['user'])) {
-  echo "<script>window.location.href = 'login.php'</script>";
+  header("Location: login.php");
   exit();
 }
 
 $id = $_GET['id'];
-$query = mysqli_query($mysqli, "SELECT * FROM produk WHERE id = $id");
+
+$query = mysqli_query($mysqli, "SELECT * FROM user WHERE id = $id");
 $row = mysqli_fetch_assoc($query);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +22,7 @@ $row = mysqli_fetch_assoc($query);
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Produk</title>
-  <link rel="stylesheet" href="../src/style/style.css" />
+  <link rel="stylesheet" href="../src/style/style.css?v=<?php echo time(); ?>" />
 </head>
 
 <body class="font-poppins">
@@ -64,35 +64,36 @@ $row = mysqli_fetch_assoc($query);
       </div>
     </div>
   </nav>
-  <main class="mt-16 min-h-screen">
-    <div class="mx-auto max-w-4xl p-3 sm:p-0">
-      <div class="p-2 ring-2 ring-stone-700 rounded-md">
-        <img src="../src/assets/produk/<?= $row['gambar'] ?>" alt="produk" class="block w-full rounded-md" />
-        <div class="details mt-3">
-          <h1 class="font-bold text-lg">Deskripsi</h1>
-          <p class="text-xs">
-            <?= $row['deskripsi'] ?>
-          </p>
-          <h1 class="font-bold text-lg mt-3">Harga (Rp.)</h1>
-          <p class="text-xs font-medium">Rp. <?= $row['harga'] ?> / day</p>
-          <h1 class="font-bold text-lg mt-3">Pemesanan</h1>
-          <form action="" method="get">
-            <label for="waktu" class="text-xs font-medium block mb-3">
-              <span>Waktu: </span>
-              <input type="number" name="waktu" id="waktu" class="p-1 outline-none border border-stone-800 rounded" />
-              <span>Hari</span>
-            </label>
-            <label for="jumlah" class="text-xs font-medium block">
-              <span>Jumlah: </span>
-              <input type="number" name="jumlah" id="jumlah" class="p-1 outline-none border border-stone-800 rounded" />
-              <span>Barang</span>
-            </label>
-            <button name="addcart" class="my-3 font-bold bg-stone-800 text-white p-2 w-full rounded-md">
-              Tambahkan ke keranjang
-            </button>
-          </form>
+  <main class="mt-20 min-h-screen max-w-md mx-auto">
+    <div class="profile max-w-md md:flex md:justify-center md:items-center mx-auto">
+      <!-- <img src="../src/assets/image/card.jpg" class="w-44 h-44 shadow-lg ring-2 ring-stone-800 mx-auto rounded-md object-cover object-center" alt="profile_user" /> -->
+      <div class="flex flex-col mt-4 md:text-left text-center">
+        <h1 class="font-bold text-stone-800"><?= $row['nama'] ?></h1>
+        <p class="text-xs text-center">@<?= $row['username'] ?> | <?= $row['alamat'] ?></p>
+        <div class="text-xs flex justify-center items-center gap-3 font-bold mt-3">
+          <a href="produk.php" class="bg-stone-800 inline-block text-white px-3 py-2 rounded-md">
+            Sewa Sekarang
+          </a>
+          <a href="editprofile.php?id=<?= $row['id'] ?>" class="bg-stone-400 text-stone-800 px-3 py-2 rounded-md">
+            Edit Profile
+          </a>
         </div>
       </div>
+    </div>
+    <div class="riwayat mt-12">
+      <h1 class="text-center font-bold my-7">Riwayat Pemesanan</h1>
+      <section>
+        <a href="#" class="bg-stone-800 relative mb-5 text-white block p-3 rounded-md">
+          <img src="../src/assets/icons/arrow-to-top-24.png" class="absolute right-2 top-2" alt="arrow-to-top" />
+          <h1 class="font-bold">Pemesanan Nomor #12</h1>
+          <p class="text-xs">1 Barang</p>
+        </a>
+        <a href="#" class="bg-stone-800 relative mb-5 text-white block p-3 rounded-md">
+          <img src="../src/assets/icons/arrow-to-top-24.png" class="absolute right-2 top-2" alt="arrow-to-top" />
+          <h1 class="font-bold">Pemesanan Nomor #12</h1>
+          <p class="text-xs">1 Barang</p>
+        </a>
+      </section>
     </div>
   </main>
   <footer class="bg-stone-700 p-3 text-sm text-center text-white mt-6">
