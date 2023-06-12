@@ -92,15 +92,15 @@
         </div>
       </div>
     </header>
-    <main class="containers">
-      <section class="my-12">
+    <main class="containers flex flex-col py-20 md:py-0 gap-10 md:gap-0 md:justify-evenly">
+      <section class="px-4">
         <h1 class="text-center text-stone-800 text-2xl pb-4 font-bold">
           Tentang Kami
         </h1>
         <div class="items-wrap flex gap-3">
           <div class="line w-4 bg-yellow-400 rounded-md"></div>
-          <p class="text-left text-sm max-w-xl md:text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+          <p class="text-left text-sm max-w-lg md:text-lg">
+            <span class="text-4xl">Lorem</span>  ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
             odio, rem quod ab sed, in odit quaerat voluptas, fugiat inventore
             laudantium nemo reprehenderit laboriosam at quo cupiditate totam
             cumque officia minus vitae! Suscipit repellendus numquam magni
@@ -113,37 +113,40 @@
         </div>
       </section>
 
-      <h1 class="text-center text-stone-800 text-2xl pb-4 font-bold">
+      <section>
+        <h1 class="text-center text-stone-800 text-2xl pb-4 font-bold">
         Layanan Kami
       </h1>
       <div class="serve-items flex flex-col md:flex-row justify-center gap-8">
         <div class="serve-item flex items-center flex-col gap-4">
           <div
-            class="flex items-center justify-center card w-16 h-16 bg-stone-300 text-lg font-bold rounded-full text-center"
+            class="flex items-center justify-center card w-16 h-16 bg-stone-600 text-lg font-bold rounded-full text-center"
           >
-            1
+          <i class="fa-sharp fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+        </div>
+          <p>Pemesanan Barang</p>
+        </div>
+        <div class="serve-item flex items-center flex-col gap-4">
+          <div
+            class="flex items-center justify-center card w-16 h-16 bg-stone-600 text-lg font-bold rounded-full text-center"
+          >
+          <i class="fa-sharp fa-solid fa-truck" style="color: #ffffff;"></i>
           </div>
           <p>Pemesanan Barang</p>
         </div>
         <div class="serve-item flex items-center flex-col gap-4">
           <div
-            class="flex items-center justify-center card w-16 h-16 bg-stone-300 text-lg font-bold rounded-full text-center"
+            class="flex items-center justify-center card w-16 h-16 bg-stone-600 text-lg font-bold rounded-full text-center"
           >
-            2
-          </div>
-          <p>Pemesanan Barang</p>
+          <i class="fa-solid fa-sack-dollar" style="color: #ffffff;"></i>
         </div>
-        <div class="serve-item flex items-center flex-col gap-4">
-          <div
-            class="flex items-center justify-center card w-16 h-16 bg-stone-300 text-lg font-bold rounded-full text-center"
-          >
-            3
-          </div>
           <p>Pemesanan Barang</p>
         </div>
       </div>
+      </section>
+      
 
-      <div class="question-accordion my-12">
+      <section class="question-accordion">
         <h1 class="text-center text-stone-800 text-2xl pb-4 font-bold">
           Kenapa Pilih Kami?
         </h1>
@@ -263,7 +266,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
     <footer class="bottom-0 bg-stone-700">
       <section class="footer-items p-6 flex items-center flex-col gap-5">
