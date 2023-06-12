@@ -37,32 +37,56 @@
               >
             </li>
             <li>
-              <a class="hover:scale-110 text-sm inline-block" href="produk.html"
+              <a class="hover:scale-110 text-sm inline-block" href="produk.php"
                 >Sewa Barang</a
               >
             </li>
             <li>
               <a
                 class="hover:scale-110 text-sm inline-block"
-                href="keranjang.html"
+                href="keranjang.php"
                 >Keranjang</a
               >
             </li>
+            <?php if (isset($_SESSION['user'])) : ?>
+            <li>
+              <a
+                class="hover:scale-110 text-sm inline-block"
+                href="editprofile.php"
+                >Edit Profile</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:scale-110 text-sm font-bold inline-block"
+                href="profile.php"
+                ><?= $_SESSION['user'] ?></a
+              >
+            </li>
+            <li>
+              <a
+                class="px-3 py-1 text-yellow-400 hover:bg-yellow-400 hover:text-stone-800 font-semibold transition-all ease-in-out duration-150 border-2 border-yellow-400 rounded-sm"
+                href="logout.php"
+                >Logout</a
+              >
+            </li>
+            <?php else : ?>
           </ul>
           <div
             class="btn flex md:flex-row flex-col md:flex-wrap text-center gap-7"
           >
             <a
               class="bg-yellow-400 hover:bg-transparent hover:text-yellow-400 transition-all ease-in-out duration-150 border-2 border-yellow-400 px-3 py-1 rounded-sm text-stone-800 font-semibold"
-              href="signup.html"
+              href="signup.php"
               >Sign Up</a
             >
             <a
               class="px-3 py-1 text-yellow-400 hover:bg-yellow-400 hover:text-stone-800 font-semibold transition-all ease-in-out duration-150 border-2 border-yellow-400 rounded-sm"
-              href="login.html"
+              href="login.php"
               >Login</a
             >
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </nav>

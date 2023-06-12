@@ -745,9 +745,15 @@ video {
   margin-bottom: 2rem;
 }
 
+
 .my-20{
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+.my-6{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
 }
 
 .mb-2{
@@ -1004,6 +1010,11 @@ video {
 .w-max{
   width: -moz-max-content;
   width: max-content;
+}
+
+.min-w-max{
+  min-width: -moz-max-content;
+  min-width: max-content;
 }
 
 .max-w-2xl{
@@ -2140,6 +2151,10 @@ video {
 .bg-stone-800{
   --tw-bg-opacity: 1;
   background-color: rgb(41 37 36 / var(--tw-bg-opacity));
+}
+
+.bg-stone-800\/80{
+  background-color: rgb(41 37 36 / 0.8);
 }
 
 .bg-stone-800\/90{
