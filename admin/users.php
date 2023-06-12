@@ -76,47 +76,49 @@ if (isset($_SESSION['alert'])) {
           DATA USERS PAGE
         </h1>
       </div>
-      <div class="overflow-x-scroll max-w-2xl md:w-full md:overflow-x-visible grid place-items-center mx-auto">
-        <div class="flex justify-start my-4 w-full">
+      <div class="overflow-x-scroll my-8 flex flex-col justify-start mx-auto">
+        <div class="flex justify-start mt-4 w-full">
           <a href="tambahuser.php" class="bg-yellow-400 hover:bg-yellow-500 px-3 py-2 rounded-md font-semibold text-xs shadow-md">Tambah User</a>
         </div>
-        <table class="text-center w-max text-sm text-stone-500">
-          <thead class="text-xs text-white uppercase bg-stone-700">
-            <th class="p-3">NO</th>
-            <th>NAMA</th>
-            <th>USERNAME</th>
-            <th>PASSWORD</th>
-            <th>ALAMAT</th>
-            <th>ACTION</th>
-          </thead>
-          <tbody>
-            <?php $no = 1; ?>
-            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-              <tr class="bg-white border-b text-stone-900">
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <?= $no ?>
-                </td>
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <?= $row['nama'] ?>
-                </td>
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <?= $row['username'] ?>
-                </td>
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <?= $row['password'] ?>
-                </td>
-                <td class="px-2 py-4 border font-medium">
-                  <?= $row['alamat'] ?>
-                </td>
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <a href="edituser.php?id=<?= $row['id'] ?>" class="py-2 px-4 bg-blue-600 hover:bg-blue-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold">Edit</a>
-                  <a href="delete.php?id=<?= $row['id'] ?>&tb=user&page=users" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')" class="py-2 px-4 bg-rose-600 hover:bg-rose-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold">Delete</a>
-                </td>
-              </tr>
-              <?php $no++; ?>
-            <?php endwhile ?>
-          </tbody>
-        </table>
+        <div class="overflow-x-scroll my-8 grid place-items-center mx-auto">
+          <table class="text-center w-max text-sm text-stone-500">
+            <thead class="text-xs text-white uppercase bg-stone-700">
+              <th class="p-3">NO</th>
+              <th>NAMA</th>
+              <th>USERNAME</th>
+              <th>PASSWORD</th>
+              <th>ALAMAT</th>
+              <th>ACTION</th>
+            </thead>
+            <tbody>
+              <?php $no = 1; ?>
+              <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                <tr class="bg-white border-b text-stone-900">
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <?= $no ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <?= $row['nama'] ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <?= $row['username'] ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <?= $row['password'] ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium">
+                    <?= $row['alamat'] ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <a href="edituser.php?id=<?= $row['id'] ?>" class="py-2 px-4 bg-blue-600 hover:bg-blue-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold">Edit</a>
+                    <a href="delete.php?id=<?= $row['id'] ?>&tb=user&page=users" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')" class="py-2 px-4 bg-rose-600 hover:bg-rose-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold">Delete</a>
+                  </td>
+                </tr>
+                <?php $no++; ?>
+              <?php endwhile ?>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   </main>

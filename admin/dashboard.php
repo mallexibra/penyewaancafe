@@ -10,7 +10,7 @@ if (!isset($_SESSION['name'])) {
 $result = mysqli_query($mysqli, "SELECT * FROM user");
 
 $query = mysqli_query($mysqli, "SELECT p.id AS id_produk, p.gambar, p.nama AS nama_produk, p.harga, p.stok, kp.nama AS nama_kategori, p.deskripsi FROM produk AS p INNER JOIN kategori_produk AS kp ON p.kategori = kp.id");
-
+$laporan = mysqli_query($mysqli, "SELECT trx.id AS id, usr.nama AS nama, trx.tanggal AS tanggal, trx.total AS total, trx.status AS status FROM transaksi AS trx LEFT JOIN user AS usr ON trx.id_user = usr.id WHERE trx.id_user = usr.id");
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,8 @@ $query = mysqli_query($mysqli, "SELECT p.id AS id_produk, p.gambar, p.nama AS na
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin</title>
-  <link rel="stylesheet" href="../src/style/style.css" />
+  <link rel="stylesheet" href="../src/style/style.css?v=<?php echo time(); ?>" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 
 <body>
@@ -73,11 +74,10 @@ $query = mysqli_query($mysqli, "SELECT p.id AS id_produk, p.gambar, p.nama AS na
           DASHBOARD PAGE
         </h1>
       </div>
-      <div>
-        <div></div>
-        <div></div>
+      <div class="max-w-xl mx-auto">
+        <canvas id="myChart"></canvas>
       </div>
-      <div class="overflow-x-scroll my-8 max-w-2xl md:w-full md:overflow-x-visible grid place-items-center mx-auto">
+      <div class="overflow-x-scroll my-8 grid place-items-center mx-auto">
         <table class="text-center w-max text-sm text-stone-500">
           <thead class="text-xs text-white uppercase bg-stone-700">
             <th class="p-3">NO</th>
@@ -111,7 +111,7 @@ $query = mysqli_query($mysqli, "SELECT p.id AS id_produk, p.gambar, p.nama AS na
           </tbody>
         </table>
       </div>
-      <div class="overflow-x-scroll my-8 md:w-full md:overflow-x-visible max-w-lg grid place-items-center mx-auto">
+      <div class="overflow-x-scroll my-8 grid place-items-center mx-auto">
         <table class="text-center w-max text-sm text-stone-500">
           <thead class="text-xs text-white uppercase bg-stone-700">
             <th class="p-3">NO</th>
@@ -153,35 +153,37 @@ $query = mysqli_query($mysqli, "SELECT p.id AS id_produk, p.gambar, p.nama AS na
           </tbody>
         </table>
       </div>
-      <div class="overflow-x-scroll md:w-full md:overflow-x-visible max-w-lg grid place-items-center mx-auto">
+      <div class="overflow-x-scroll my-8 grid place-items-center mx-auto">
         <table class="text-center w-max text-sm text-stone-500">
           <thead class="text-xs text-white uppercase bg-stone-700">
             <th class="p-3">NO</th>
-            <th>GAMBAR</th>
             <th>NAMA</th>
-            <th>STOK</th>
-            <th>KATEGORI</th>
-            <th>DESCRIPTION</th>
+            <th>TANGGAL</th>
+            <th>TOTAL</th>
+            <th>STATUS</th>
           </thead>
           <tbody>
-            <tr class="bg-white border-b text-stone-900">
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                1
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium">NULL</td>
-            </tr>
+            <?php $no = 1; ?>
+            <?php while ($row = mysqli_fetch_assoc($laporan)) : ?>
+              <tr class="bg-white border-b text-stone-900">
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $no ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $row['nama'] ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $row['tanggal'] ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $row['total'] ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <a href="status.php?idtransaksi=<?= $row['id'] ?>&status=<?= $row['status'] ?>" class="py-2 px-4 bg-blue-600 hover:bg-blue-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold"><?= $row['status'] ?></a>
+                </td>
+              </tr>
+              <?php $no++; ?>
+            <?php endwhile; ?>
           </tbody>
         </table>
       </div>
@@ -191,6 +193,55 @@ $query = mysqli_query($mysqli, "SELECT p.id AS id_produk, p.gambar, p.nama AS na
     <p class="font-semibold">Copyright &copy; 2023 by Mallexibra</p>
   </footer>
   <script src="../src/style/scriptAdmin.js"></script>
+
+  <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["PENDING", "SUCCESS", "RETURNED"],
+        datasets: [{
+          label: '',
+          data: [
+            <?php
+            $jumlah_pending = mysqli_query($mysqli, "select * from transaksi where status='PENDING'");
+            echo mysqli_num_rows($jumlah_pending);
+            ?>,
+            <?php
+            $jumlah_success = mysqli_query($mysqli, "select * from transaksi where status='SUCCESS'");
+            echo mysqli_num_rows($jumlah_success);
+            ?>,
+            <?php
+            $jumlahreturned = mysqli_query($mysqli, "select * from transaksi where status='RETURNED'");
+            echo mysqli_num_rows($jumlahreturned);
+            ?>,
+          ],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              // beginAtZero: false
+            }
+          }]
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>

@@ -8,10 +8,12 @@ if (!isset($_SESSION['user'])) {
   exit();
 }
 
-$id = $_GET['id'];
+$id = $_SESSION['id_user'];
 
 $query = mysqli_query($mysqli, "SELECT * FROM user WHERE id = $id");
 $row = mysqli_fetch_assoc($query);
+
+$check = mysqli_query($mysqli, "SELECT id FROM transaksi WHERE id_user=$id");
 
 ?>
 <!DOCTYPE html>
@@ -68,7 +70,7 @@ $row = mysqli_fetch_assoc($query);
     <div class="profile max-w-md md:flex md:justify-center md:items-center mx-auto">
       <!-- <img src="../src/assets/image/card.jpg" class="w-44 h-44 shadow-lg ring-2 ring-stone-800 mx-auto rounded-md object-cover object-center" alt="profile_user" /> -->
       <div class="flex flex-col mt-4 md:text-left text-center">
-        <h1 class="font-bold text-stone-800"><?= $row['nama'] ?></h1>
+        <h1 class="font-bold text-center text-stone-800"><?= $row['nama'] ?></h1>
         <p class="text-xs text-center">@<?= $row['username'] ?> | <?= $row['alamat'] ?></p>
         <div class="text-xs flex justify-center items-center gap-3 font-bold mt-3">
           <a href="produk.php" class="bg-stone-800 inline-block text-white px-3 py-2 rounded-md">
@@ -83,16 +85,18 @@ $row = mysqli_fetch_assoc($query);
     <div class="riwayat mt-12">
       <h1 class="text-center font-bold my-7">Riwayat Pemesanan</h1>
       <section>
-        <a href="#" class="bg-stone-800 relative mb-5 text-white block p-3 rounded-md">
-          <img src="../src/assets/icons/arrow-to-top-24.png" class="absolute right-2 top-2" alt="arrow-to-top" />
-          <h1 class="font-bold">Pemesanan Nomor #12</h1>
-          <p class="text-xs">1 Barang</p>
-        </a>
-        <a href="#" class="bg-stone-800 relative mb-5 text-white block p-3 rounded-md">
-          <img src="../src/assets/icons/arrow-to-top-24.png" class="absolute right-2 top-2" alt="arrow-to-top" />
-          <h1 class="font-bold">Pemesanan Nomor #12</h1>
-          <p class="text-xs">1 Barang</p>
-        </a>
+        <?php while ($row = mysqli_fetch_assoc($check)) : ?>
+          <?php
+          $a = $row['id'];
+          $br = mysqli_query($mysqli, "SELECT SUM(jumlah) AS jumlah FROM detail_transaksi WHERE id_transaksi = $a");
+          $c = mysqli_fetch_assoc($br);
+          ?>
+          <a href="checkout.php?idtrx=<?= $row['id'] ?>" class="bg-stone-800 relative mb-5 text-white block p-3 rounded-md">
+            <img src="../src/assets/icons/arrow-to-top-24.png" class="absolute right-2 top-2" alt="arrow-to-top" />
+            <h1 class="font-bold">Pemesanan Nomor #<?= $row['id'] ?></h1>
+            <p class="text-xs"><?= $c['jumlah'] ?> Barang</p>
+          </a>
+        <?php endwhile; ?>
       </section>
     </div>
   </main>

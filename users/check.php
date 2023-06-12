@@ -16,4 +16,4 @@ mysqli_query($mysqli, "INSERT INTO detail_transaksi (id_produk, id_user, hari, t
 
 mysqli_query($mysqli, "DELETE FROM keranjang");
 
-echo "<script>window.location.href='keranjang.php'</script>";
+echo "<script>window.location.href='checkout.php?idtrx=" . $row['id'] . "'</script>";

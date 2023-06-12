@@ -76,55 +76,57 @@ $result = mysqli_query($mysqli, "SELECT p.id AS id_produk, p.gambar, p.nama AS n
           DATA PRODUK PAGE
         </h1>
       </div>
-      <div class="overflow-x-scroll md:w-full md:overflow-x-visible max-w-lg grid place-items-center mx-auto">
+      <div class="overflow-x-scroll grid place-items-center mx-auto">
         <div class="flex justify-start my-4 w-full">
           <a href="tambahproduk.php" class="bg-yellow-400 hover:bg-yellow-500 px-3 py-2 rounded-md font-semibold text-xs shadow-md">Tambah Produk</a>
         </div>
-        <table class="text-center w-max text-sm text-stone-500">
-          <thead class="text-xs text-white uppercase bg-stone-700">
-            <th class="p-3">NO</th>
-            <th>GAMBAR</th>
-            <th>NAMA</th>
-            <th>HARGA</th>
-            <th>STOK</th>
-            <th>KATEGORI</th>
-            <th>DESCRIPTION</th>
-            <th>ACTION</th>
-          </thead>
-          <tbody>
-            <?php $no = 1; ?>
-            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-              <tr class="bg-white border-b text-stone-900">
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <?= $no ?>
-                </td>
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <img src="../src/assets/produk/<?= $row['gambar'] ?>" alt="Gambar Produk" width="120px">
-                </td>
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <?= $row['nama_produk'] ?>
-                </td>
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  Rp. <?= $row['harga'] ?>
-                </td>
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <?= $row['stok'] ?>
-                </td>
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <?= $row['nama_kategori'] ?>
-                </td>
-                <td class="px-2 py-4 border font-medium" width="400">
-                  <?= $row['deskripsi'] ?>
-                </td>
-                <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                  <a href="editproduk.php?id=<?= $row['id_produk'] ?>" class="py-2 px-4 bg-blue-600 hover:bg-blue-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold">Edit</a>
-                  <a href="delete.php?id=<?= $row['id_produk'] ?>&tb=produk&page=produk" onclick="return confirm('Apakah anda yakin akan menghapus data ini?!')" class="py-2 px-4 bg-rose-600 hover:bg-rose-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold">Delete</a>
-                </td>
-              </tr>
-              <?php $no++; ?>
-            <?php endwhile; ?>
-          </tbody>
-        </table>
+        <div class="overflow-x-scroll my-8 grid place-items-center mx-auto">
+          <table class="text-center w-max text-sm text-stone-500">
+            <thead class="text-xs text-white uppercase bg-stone-700">
+              <th class="p-3">NO</th>
+              <th>GAMBAR</th>
+              <th>NAMA</th>
+              <th>HARGA</th>
+              <th>STOK</th>
+              <th>KATEGORI</th>
+              <th>DESCRIPTION</th>
+              <th>ACTION</th>
+            </thead>
+            <tbody>
+              <?php $no = 1; ?>
+              <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                <tr class="bg-white border-b text-stone-900">
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <?= $no ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <img src="../src/assets/produk/<?= $row['gambar'] ?>" alt="Gambar Produk" width="120px">
+                  </td>
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <?= $row['nama_produk'] ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    Rp. <?= $row['harga'] ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <?= $row['stok'] ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <?= $row['nama_kategori'] ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium" width="400">
+                    <?= $row['deskripsi'] ?>
+                  </td>
+                  <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                    <a href="editproduk.php?id=<?= $row['id_produk'] ?>" class="py-2 px-4 bg-blue-600 hover:bg-blue-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold">Edit</a>
+                    <a href="delete.php?id=<?= $row['id_produk'] ?>&tb=produk&page=produk" onclick="return confirm('Apakah anda yakin akan menghapus data ini?!')" class="py-2 px-4 bg-rose-600 hover:bg-rose-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold">Delete</a>
+                  </td>
+                </tr>
+                <?php $no++; ?>
+              <?php endwhile; ?>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   </main>

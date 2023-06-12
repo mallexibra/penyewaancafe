@@ -6,6 +6,9 @@ if (!isset($_SESSION['name'])) {
   exit();
 }
 
+include '../src/model/conDB.php';
+$query = mysqli_query($mysqli, "SELECT trx.id AS id, usr.nama AS nama, trx.tanggal AS tanggal, trx.total AS total, trx.status AS status FROM transaksi AS trx LEFT JOIN user AS usr ON trx.id_user = usr.id WHERE trx.id_user = usr.id");
+
 ?>
 
 <!DOCTYPE html>
@@ -68,39 +71,38 @@ if (!isset($_SESSION['name'])) {
           LAPORAN PAGE
         </h1>
       </div>
-      <div class="overflow-x-scroll md:w-full md:overflow-x-visible max-w-lg grid place-items-center mx-auto">
+
+      <div class="overflow-x-scroll my-8 grid place-items-center mx-auto">
         <table class="text-center w-max text-sm text-stone-500">
           <thead class="text-xs text-white uppercase bg-stone-700">
             <th class="p-3">NO</th>
-            <th>GAMBAR</th>
             <th>NAMA</th>
-            <th>STOK</th>
-            <th>KATEGORI</th>
-            <th>DESCRIPTION</th>
-            <th>ACTION</th>
+            <th>TANGGAL</th>
+            <th>TOTAL</th>
+            <th>STATUS</th>
           </thead>
           <tbody>
-            <tr class="bg-white border-b text-stone-900">
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                1
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                NULL
-              </td>
-              <td class="px-2 py-4 border font-medium">NULL</td>
-              <td class="px-2 py-4 border font-medium whitespace-nowrap">
-                <a href="#" class="py-2 px-4 bg-blue-600 hover:bg-blue-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold">Kirim Pesanan</a>
-              </td>
-            </tr>
+            <?php $no = 1; ?>
+            <?php while ($row = mysqli_fetch_assoc($query)) : ?>
+              <tr class="bg-white border-b text-stone-900">
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $no ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $row['nama'] ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $row['tanggal'] ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <?= $row['total'] ?>
+                </td>
+                <td class="px-2 py-4 border font-medium whitespace-nowrap">
+                  <a href="status.php?idtransaksi=<?= $row['id'] ?>&status=<?= $row['status'] ?>" class="py-2 px-4 bg-blue-600 hover:bg-blue-500 transition-all duration-300 ease-in-out rounded-md text-white font-semibold"><?= $row['status'] ?></a>
+                </td>
+              </tr>
+              <?php $no++; ?>
+            <?php endwhile; ?>
           </tbody>
         </table>
       </div>
@@ -110,6 +112,7 @@ if (!isset($_SESSION['name'])) {
     <p class="font-semibold">Copyright &copy; 2023 by Mallexibra</p>
   </footer>
   <script src="../src/style/scriptAdmin.js"></script>
+
 </body>
 
 </html>
