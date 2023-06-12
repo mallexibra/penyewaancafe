@@ -20,7 +20,7 @@ $laporan = mysqli_query($mysqli, "SELECT trx.id AS id, usr.nama AS nama, trx.tan
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin</title>
+  <title>ADMIN | Dashboard</title>
   <link rel="stylesheet" href="../src/style/style.css?v=<?php echo time(); ?>" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>

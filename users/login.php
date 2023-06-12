@@ -13,7 +13,7 @@ $query = mysqli_query($mysqli, "SELECT * FROM user");
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Users</title>
+  <title>CAFESTUFF | Login</title>
   <link rel="stylesheet" href="../src/style/style.css" />
 </head>
 
@@ -28,7 +28,7 @@ $query = mysqli_query($mysqli, "SELECT * FROM user");
       <div id="sidebar" class="list_item text-sm font-medium fixed md:static md:bg-transparent bg-stone-800/90 w-[70%] h-screen md:h-auto top-[60px] right-0 hidden md:flex md:flex-row flex-col md:justify-end justify-center items-center gap-7">
         <ul class="flex flex-col md:flex-row text-center gap-7">
           <li>
-            <a class="hover:scale-110 text-sm inline-block" href="../index.html">Dashboard</a>
+            <a class="hover:scale-110 text-sm inline-block" href="../index.php">Dashboard</a>
           </li>
           <li>
             <a class="hover:scale-110 text-sm inline-block" href="produk.php">Sewa Barang</a>
@@ -47,8 +47,8 @@ $query = mysqli_query($mysqli, "SELECT * FROM user");
   <main class="w-full min-h-screen bg-yellow-100 grid place-items-center">
     <form action="#" method="post" class="flex flex-col mt-20 w-4/5 md:w-5/12 bg-stone-700 text-white p-6 rounded-md shadow-lg">
       <div class="flex w-full mb-3 text-center font-semibold justify-between">
-        <a href="login.html" class="w-full block bg-yellow-500 text-stone-700 rounded-sm p-2">LOGIN</a>
-        <a href="signup.html" class="w-full block rounded-sm p-2">SIGN UP</a>
+        <a href="login.php" class="w-full block bg-yellow-500 text-stone-700 rounded-sm p-2">LOGIN</a>
+        <a href="signup.php" class="w-full block rounded-sm p-2">SIGN UP</a>
       </div>
       <h1 class="text-center font-extrabold text-2xl">LOGIN USERS</h1>
       <p class="text-center text-xs my-3">Silahkan login dengan akun anda!</p>

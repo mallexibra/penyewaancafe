@@ -23,7 +23,7 @@ $query = mysqli_query($mysqli, "SELECT dtl.jumlah AS jumlah, dtl.hari AS hari, d
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Produk</title>
+  <title>CAFESTUFF | Nota Pembayaran</title>
   <link rel="stylesheet" href="../src/style/style.css" />
 </head>
 
@@ -38,7 +38,7 @@ $query = mysqli_query($mysqli, "SELECT dtl.jumlah AS jumlah, dtl.hari AS hari, d
       <div id="sidebar" class="list_item text-sm font-medium fixed md:static md:bg-transparent bg-stone-800/90 w-[70%] h-screen md:h-auto top-[60px] right-0 hidden md:flex md:flex-row flex-col md:justify-end justify-center items-center gap-7">
         <ul class="flex flex-col md:flex-row text-center gap-7">
           <li>
-            <a class="hover:scale-110 text-sm inline-block" href="../index.html">Dashboard</a>
+            <a class="hover:scale-110 text-sm inline-block" href="../index.php">Dashboard</a>
           </li>
           <li>
             <a class="hover:scale-110 text-sm inline-block" href="produk.php">Sewa Barang</a>
