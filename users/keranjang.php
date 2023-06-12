@@ -8,8 +8,8 @@ if (!isset($_SESSION['user'])) {
 
 include '../src/model/conDB.php';
 $id = $_SESSION['id_user'];
-$query = mysqli_query($mysqli, "SELECT * FROM keranjang INNER JOIN produk ON keranjang.id = produk.id WHERE keranjang.id_user=$id");
-$queryCount = mysqli_query($mysqli, "SELECT COUNT(id) AS jmlBarang FROM keranjang WHERE id=$id");
+$query = mysqli_query($mysqli, "SELECT kr.id AS idkr, kr.total AS total, kr.hari AS hari, kr.jumlah AS jumlah , pr.gambar AS gambar, pr.nama AS nama  FROM keranjang AS kr JOIN produk AS pr ON kr.id_produk = pr.id WHERE kr.id_user=$id");
+$queryCount = mysqli_query($mysqli, "SELECT COUNT(id) AS jmlBarang FROM keranjang WHERE id_user=$id");
 $count = mysqli_fetch_assoc($queryCount);
 
 
@@ -70,7 +70,7 @@ $count = mysqli_fetch_assoc($queryCount);
         Keranjang Penyewaan
       </h1>
       <div class="my-5 max-w-md mx-auto">
-        <?php $total; ?>
+        <?php $total = 0; ?>
         <?php if (mysqli_num_rows($query) > 0) : ?>
           <?php while ($row = mysqli_fetch_assoc($query)) : ?>
             <span class="flex gap-4 p-3 rounded-md ring-2 my-3 ring-stone-800 justify-between items-center shadow-lg">
@@ -83,18 +83,18 @@ $count = mysqli_fetch_assoc($queryCount);
                 </div>
               </span>
               <span>
-                <a href="deletekeranjang.php?id=<?= $row['keranjang.id'] ?>" class="px-2 py-1 bg-rose-700 text-white rounded-md text-xs font-semibold">Delete</a>
+                <a href="deletekeranjang.php?id=<?= $row['idkr'] ?>" onclick="return confirm('Apakah anda yakin untuk menghapusnya?')" class="px-2 py-1 bg-rose-700 text-white rounded-md text-xs font-semibold">Delete</a>
               </span>
             </span>
-            <?php $total = $otal + $row['total']; ?>
+            <?php $total = $total + (int)$row['total']; ?>
           <?php endwhile; ?>
           <div class="max-w-md mx-auto">
             <div class="bg-stone-800 rounded-md flex justify-between items-center p-3 text-white">
               <div>
                 <h1 class="font-bold"><?= $count['jmlBarang'] ?> Barang</h1>
-                <p class="text-xs">Total Bayar: Rp. <?php $total; ?></p>
+                <p class="text-xs">Total Bayar: Rp. <?php echo $total; ?></p>
               </div>
-              <a href="#" class="bg-stone-600 px-3 py-2 inline-block text-xs font-semibold rounded-md hover:bg-stone-700 transition-all duration-300">
+              <a href="check.php?total=<?= $total ?>" class="bg-stone-600 px-3 py-2 inline-block text-xs font-semibold rounded-md hover:bg-stone-700 transition-all duration-300">
                 Bayar Sekarang
               </a>
             </div>

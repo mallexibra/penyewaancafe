@@ -8,6 +8,11 @@ if (!isset($_SESSION['user'])) {
   exit();
 }
 
+if (!isset($_GET['id'])) {
+  echo "Error: ID parameter is missing.";
+  exit();
+}
+
 $id = $_GET['id'];
 $query = mysqli_query($mysqli, "SELECT * FROM produk WHERE id = $id");
 $row = mysqli_fetch_assoc($query);
@@ -77,6 +82,8 @@ $row = mysqli_fetch_assoc($query);
           <p class="text-xs font-medium">Rp. <?= $row['harga'] ?> / day</p>
           <h1 class="font-bold text-lg mt-3">Pemesanan</h1>
           <form action="" method="get">
+            <input type="text" name="id" id="id" value="<?= $id ?>">
+            <input type="text" name="harga" id="harga" value="<?= $row['harga'] ?>">
             <label for="waktu" class="text-xs font-medium block mb-3">
               <span>Waktu: </span>
               <input type="number" name="waktu" id="waktu" class="p-1 outline-none border border-stone-800 rounded" />
@@ -91,6 +98,19 @@ $row = mysqli_fetch_assoc($query);
               Tambahkan ke keranjang
             </button>
           </form>
+          <?php
+          if (isset($_GET['addcart'])) {
+            $iduser = $_SESSION['id_user'];
+            $idproduk = $_GET['id'];
+            $hari = $_GET['waktu'];
+            $jumlah = $_GET['jumlah'];
+            $total = $_GET['harga'] * $jumlah * $hari;
+            $insert = mysqli_query($mysqli, "INSERT INTO keranjang (id_produk, id_user, hari, total, jumlah) VALUES( $idproduk, $iduser, $hari, $total, $jumlah)");
+            if ($insert) {
+              echo "<script>window.location.href='keranjang.php'</script>";
+              exit();
+            }
+          } ?>
         </div>
       </div>
     </div>

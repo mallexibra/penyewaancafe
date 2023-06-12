@@ -90,7 +90,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM kategori_produk");
     $deskripsi = $_POST['deskripsi'];
 
     // Simpan gambar
-    var_dump($_FILES);
     $gambar = uniqid() . '_' . $_FILES['gambar']['name'];
     $file_tmp = $_FILES['gambar']['tmp_name'];
     $file_destination = "../src/assets/produk/" . $gambar;
