@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])) {
   exit();
 }
 
-$id = $_GET['id'];
+$id = $_SESSION['id_user'];
 
 $query = mysqli_query($mysqli, "SELECT * FROM user WHERE id = $id");
 $row = mysqli_fetch_assoc($query);

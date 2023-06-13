@@ -82,6 +82,9 @@ $query = mysqli_query($mysqli, "SELECT * FROM user");
         $_SESSION['id_user'] = $row['id'];
         header("Location: produk.php");
         exit();
+      } else {
+        echo "<script>alert('Username/Password anda salah!')</script>";
+        exit();
       }
     }
   }
