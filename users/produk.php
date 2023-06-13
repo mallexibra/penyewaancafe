@@ -98,7 +98,7 @@ $category = mysqli_query($mysqli, "SELECT * FROM kategori_produk");
     </div>
   </main>
   <footer class="bg-stone-700 p-3 text-sm text-center text-white mt-6">
-    <p class="font-semibold">Copyright &copy; 2023 by Mallexibra</p>
+    <p class="font-semibold">Copyright &copy; 2023 by KELOMPOK 3</p>
   </footer>
 
   <script src="../src/style/script.js"></script>
