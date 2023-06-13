@@ -19,7 +19,7 @@ $query = mysqli_query($mysqli, "SELECT trx.id AS id, usr.nama AS nama, trx.tangg
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ADMIN | Laporan</title>
-  <link rel="stylesheet" href="../src/style/style.css" />
+  <link rel="stylesheet" href="../src/style/style.css?v=<?php echo time(); ?>" />
 </head>
 
 <body>

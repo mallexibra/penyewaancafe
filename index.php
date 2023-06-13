@@ -94,7 +94,7 @@ include 'src/model/conDB.php';
       </div>
     </section>
 
-    <h1 class="text-center text-white text-2xl pb-4 font-bold">
+    <h1 class="text-center text-white text-2xl my-4 font-bold">
       LAYANAN KAMI
     </h1>
     <div class="serve-items mt-5 text-white flex flex-col md:flex-row justify-center gap-8">

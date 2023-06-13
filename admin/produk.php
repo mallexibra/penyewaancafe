@@ -24,7 +24,7 @@ $result = mysqli_query($mysqli, "SELECT p.id AS id_produk, p.gambar, p.nama AS n
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ADMIN | Produk</title>
-  <link rel="stylesheet" href="../src/style/style.css" />
+  <link rel="stylesheet" href="../src/style/style.css?v=<?php echo time(); ?>" />
 </head>
 
 <body>

@@ -11,5 +11,3 @@ if ($result) {
     header("Location: $page.php");
     exit();
 }
-
-var_dump($result);
