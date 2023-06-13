@@ -193,14 +193,12 @@ include 'src/model/conDB.php';
       </ul>
       <div class="sosmed-icons flex gap-5">
         <a href="" class="sosmed-items bg-stone-500 w-10 h-10 flex items-center justify-center rounded-full">
-
           <i class="fa-brands fa-facebook-f" style="color: #ffffff"></i>
-
         </a>
         <a href="" class="sosmed-items bg-stone-500 w-10 h-10 flex items-center justify-center rounded-full">
           <i class="fa-brands fa-instagram" style="color: #ffffff"></i>
         </a>
-        <a href="" class="sosmed-items bg-stone-500 w-10 h-10 flex items-center justify-center rounded-full">
+        <a href="https://youtube.com/@mindzyyyy" class="sosmed-items bg-stone-500 w-10 h-10 flex items-center justify-center rounded-full">
           <i class="fa-brands fa-youtube" style="color: #ffffff"></i>
         </a>
         <a href="" class="sosmed-items bg-stone-500 w-10 h-10 flex items-center justify-center rounded-full">
