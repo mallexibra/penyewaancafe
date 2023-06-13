@@ -774,6 +774,11 @@ video {
   margin-bottom: 2rem;
 }
 
+.my-24{
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
 .mb-2{
   margin-bottom: 0.5rem;
 }
@@ -832,6 +837,14 @@ video {
 
 .mt-7{
   margin-top: 1.75rem;
+}
+
+.mb-11{
+  margin-bottom: 2.75rem;
+}
+
+.mb-8{
+  margin-bottom: 2rem;
 }
 
 .box-border{
@@ -989,10 +1002,6 @@ video {
   width: 75%;
 }
 
-.w-4{
-  width: 1rem;
-}
-
 .w-4\/5{
   width: 80%;
 }
@@ -1021,6 +1030,10 @@ video {
   width: 2.25rem;
 }
 
+.w-\[20\%\]{
+  width: 20%;
+}
+
 .w-\[70\%\]{
   width: 70%;
 }
@@ -1034,6 +1047,22 @@ video {
   width: max-content;
 }
 
+.w-28{
+  width: 7rem;
+}
+
+.w-32{
+  width: 8rem;
+}
+
+.w-\[40\%\]{
+  width: 40%;
+}
+
+.w-\[35\%\]{
+  width: 35%;
+}
+
 .min-w-max{
   min-width: -moz-max-content;
   min-width: max-content;
@@ -1045,10 +1074,6 @@ video {
 
 .max-w-4xl{
   max-width: 56rem;
-}
-
-.max-w-lg{
-  max-width: 32rem;
 }
 
 .max-w-md{
@@ -1933,6 +1958,10 @@ video {
   border-radius: 0.125rem;
 }
 
+.rounded-xl{
+  border-radius: 0.75rem;
+}
+
 .rounded-b{
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -2205,17 +2234,8 @@ video {
   background-color: rgb(202 138 4 / var(--tw-bg-opacity));
 }
 
-.bg-red-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
-
 .bg-\[url\(\'\/src\/assets\/image\/cafe\.jpg\'\)\]{
   background-image: url('/src/assets/image/cafe.jpg');
-}
-
-.bg-\[url\(\'\/src\/assets\/image\/coffeebean\.png\'\)\]{
-  background-image: url('/src/assets/image/coffeebean.png');
 }
 
 .decoration-slice{
@@ -2236,10 +2256,6 @@ video {
 .box-decoration-clone{
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
-}
-
-.bg-cover{
-  background-size: cover;
 }
 
 .bg-fixed{
@@ -3253,10 +3269,6 @@ video {
     width: 41.666667%;
   }
 
-  .md\:w-full{
-    width: 100%;
-  }
-
   .md\:min-w-max{
     min-width: -moz-max-content;
     min-width: max-content;
@@ -3286,10 +3298,6 @@ video {
     justify-content: space-between;
   }
 
-  .md\:overflow-x-visible{
-    overflow-x: visible;
-  }
-
   .md\:bg-transparent{
     background-color: transparent;
   }
@@ -3298,9 +3306,13 @@ video {
     text-align: left;
   }
 
-  .md\:text-lg{
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+  .md\:text-justify{
+    text-align: justify;
+  }
+
+  .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
