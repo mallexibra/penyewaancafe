@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CAFESTUFF | Signup</title>
-  <link rel="stylesheet" href="../src/style/style.css" />
+  <link rel="stylesheet" href="../src/style/style.css?v=<?php echo time(); ?>" />
 </head>
 <nav class="bg-stone-800/90 backdrop-blur-sm fixed top-0 z-10 w-full p-4 text-white">
   <div class="relative flex justify-center md:justify-between items-center mx-auto max-w-4xl">
@@ -80,8 +80,8 @@
     $alamat = htmlspecialchars($_POST['alamat']);
 
     $query = "INSERT INTO user (nama, username, password, alamat) VALUES ('$nama', '$username', '$password', '$alamat')";
-    var_dump($query);
     if (mysqli_query($mysqli, $query)) {
+      echo "<script>alert('Silahkan login dengan akun yang telah anda daftarkan')</script>";
       echo "<script>window.location.href= 'login.php'</script>";
       exit();
     } else {

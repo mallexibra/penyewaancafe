@@ -27,7 +27,7 @@ $row = mysqli_fetch_assoc($query);
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CAFESTUFF | Detail Produk</title>
-  <link rel="stylesheet" href="../src/style/style.css" />
+  <link rel="stylesheet" href="../src/style/style.css?v=<?php echo time(); ?>" />
 </head>
 
 <body class="font-poppins">
