@@ -71,9 +71,10 @@ $row = mysqli_fetch_assoc($query);
   </nav>
   <main class="mt-16 min-h-screen">
     <div class="mx-auto max-w-4xl p-3 sm:p-0">
-      <div class="p-2 ring-2 ring-stone-700 rounded-md">
-        <img src="../src/assets/produk/<?= $row['gambar'] ?>" alt="produk" class="block w-full rounded-md" />
-        <div class="details mt-3">
+      <h1 class="font-bold text-2xl text-center my-10 pt-6 text-stone-800">DETAIL PRODUK</h1>
+      <div class="p-2 ring-2 flex flex-col justify-between items-center md:flex-row ring-stone-700 rounded-md">
+        <img src="../src/assets/produk/<?= $row['gambar'] ?>" alt="produk" class="block w-full md:w-1/2 rounded-md" />
+        <div class="details md:w-1/2 mt-3">
           <h1 class="font-bold text-lg">Deskripsi</h1>
           <p class="text-xs">
             <?= $row['deskripsi'] ?>
