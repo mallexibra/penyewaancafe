@@ -80,7 +80,7 @@ $query = mysqli_query($mysqli, "SELECT * FROM user");
       if ($username == $row['username'] && $password == $row['password']) {
         $_SESSION['user'] = strtoupper($row['nama']);
         $_SESSION['id_user'] = $row['id'];
-        header("Location: produk.php");
+        echo "<script>window.location.href='produk.php'</script>";
         exit();
       }
     }

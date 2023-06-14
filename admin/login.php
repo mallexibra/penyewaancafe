@@ -31,7 +31,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM admin");
       <button type="submit" name="submit" class="w-full p-3 bg-stone-900 rounded font-bold">
         Login
       </button>
-      <a href="../users/login.html" class="text-center text-xs mt-2 text-yellow-500 italic underline">Login Sebagai User</a>
+      <a href="../users/login.php" class="text-center text-xs mt-2 text-yellow-500 italic underline">Login Sebagai User</a>
     </form>
   </main>
   <?php
@@ -44,12 +44,12 @@ $result = mysqli_query($mysqli, "SELECT * FROM admin");
       $password = $row["password"];
       if ($username == $username_user && $password == $password_user) {
         $_SESSION['name'] = strtoupper($row["nama"]);
-        header("Location: dashboard.php");
+        echo "<script>window.location.href='dashboard.php'</script>";
         exit();
-      } else {
-        echo "<script>alert('Username/Password anda salah!')</script>";
       }
     }
+    echo "<script>alert('Username/Password anda salah!')</script>";
+    exit();
   }
 
   ?>
